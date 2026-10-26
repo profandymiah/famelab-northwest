@@ -98,6 +98,42 @@ nav.bar a.nav-apply{color:var(--spot);opacity:1;font-weight:600}
 .photo figcaption,.hero-photo figcaption{font-size:.82rem;color:var(--muted)}
 .hero-photo figcaption{color:#c3c8dc}
 .photo figcaption span,.hero-photo figcaption span{display:block;font-size:.76rem;opacity:.85}
+/* full-bleed hero */
+.hero{min-height:clamp(560px,50vw,760px);display:flex;align-items:center}
+.hero::after{content:none}
+.hero-img{position:absolute;top:0;left:-16%;width:116%;height:100%;object-fit:cover;object-position:center 30%;max-width:none}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,26,51,0) 34%,rgba(20,26,51,.9) 56%,rgba(20,26,51,.97) 70%);z-index:0}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .85fr;width:100%;position:relative;z-index:1}
+.hero-copy{grid-column:2;min-width:0}
+.hero h1{font-size:clamp(2.2rem,4vw,3.4rem)}
+.hero .hero-clock{left:max(16px,env(safe-area-inset-left,0px));bottom:64px;z-index:1}
+.hero-credit{position:absolute;left:max(16px,env(safe-area-inset-left,0px));bottom:18px;z-index:1;font-size:.75rem;color:#dfe2ee;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+/* masthead rows */
+.masthead .wrap.mast-top{justify-content:space-between;padding-block:clamp(18px,2.6vw,28px)}
+.masthead .hub-name{text-align:right;line-height:1.5}
+.unis-band{background:#1c2342;border-top:1px solid rgba(238,240,248,.08)}
+.unis-band .wrap{padding-block:14px}
+.unis-band .hub-unis{font-size:clamp(1.35rem,3.2vw,2.3rem);gap:4px 18px}
+/* roll of honour */
+.honours{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:start}
+.hon{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:grid;gap:14px;min-width:0}
+.hon-y{font-family:var(--f-mono);font-weight:700;font-size:2.6rem;line-height:1;color:var(--accent)}
+.hon-champ{display:grid;gap:2px;padding:14px 16px;background:var(--stage);color:var(--stage-ink);border-radius:8px}
+.hon-champ .lbl{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--spot)}
+.hon-champ strong{font-family:var(--f-display);font-size:1.3rem}
+.hon-champ .rg{font-size:.85rem;color:#c3c8dc}
+.hon-nw{display:grid;gap:2px;padding:10px 14px;border:2px solid var(--spot);border-radius:8px;font-family:var(--f-display);font-weight:700;font-size:1.05rem}
+.hon-nw span{font-family:var(--f-mono);font-weight:500;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.hon-list{list-style:none;margin:0;padding:0;display:grid;border-top:1px solid var(--line)}
+.hon-list li{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:.94rem}
+.hon-list li>span{display:grid;min-width:0}
+.hon-list .rg{font-size:.8rem;color:var(--muted)}
+.hon-list li.nw strong{color:var(--accent)}
+.hon-list li.more{color:var(--muted);font-size:.85rem;font-style:italic}
+.hon-list .tag{flex-shrink:0}
+.tag.win{background:var(--spot);border-color:var(--spot);color:#141a33}
+.tag.ru{border-color:var(--accent);color:var(--accent)}
+.hon-link{font-weight:600}
 /* hero */
 .hero{background:var(--stage);color:var(--stage-ink);padding-block:clamp(48px,7vw,88px);border:0;position:relative;overflow:hidden}
 .hero::after{content:"";position:absolute;inset:-30% -10% auto auto;width:70vmin;height:70vmin;border-radius:50%;
@@ -220,6 +256,15 @@ footer address{font-style:normal}
 .small{font-size:.8rem;opacity:.8;margin-top:16px}
 
 @media (max-width:900px){
+  .honours{grid-template-columns:1fr}
+  .hero{display:block;min-height:0;padding-top:0}
+  .hero-img{position:relative;left:0;width:100%;height:auto;aspect-ratio:3/2;object-position:30% 30%}
+  .hero::before{content:none}
+  .hero .wrap{grid-template-columns:1fr;padding-top:28px}
+  .hero-copy{grid-column:1}
+  .hero .hero-clock{top:calc(66.6vw - 72px);bottom:auto}
+  .hero-credit{position:static;padding:8px max(16px,env(safe-area-inset-left,0px)) 0;color:#c3c8dc;text-shadow:none}
+
   .apply-grid{grid-template-columns:1fr}
 
   .hero .wrap,.train-grid,.join{grid-template-columns:1fr}
@@ -292,15 +337,15 @@ nav.bar a[aria-current="page"]{opacity:1;color:var(--spot)}
 </head>
 <body>
 <header class="masthead">
-  <div class="wrap">
+  <div class="wrap mast-top">
     <a class="brand" href="index.html" aria-label="FameLab North West home">
       <img id="logo" alt="FameLab" src="https://images.squarespace-cdn.com/content/v1/583218b459cc687f522b226b/5aed5bc8-1b85-4148-9248-b87df6edaaae/FameLab+primary+logo+white.ai.jpg?format=1000w" hidden>
       <span class="word" id="wordmark">FameLab</span>
     </a>
-    <div class="hub">
-      <p class="hub-name">North West Regional Hub</p>
-      <p class="hub-unis"><span>University of Salford</span><span class="x" aria-hidden="true">&times;</span><span>University of Liverpool</span></p>
-    </div>
+    <p class="hub-name">North West<br>Regional Hub</p>
+  </div>
+  <div class="unis-band">
+    <div class="wrap"><p class="hub-unis"><span>University of Salford</span><span class="x" aria-hidden="true">&times;</span><span>University of Liverpool</span></p></div>
   </div>
 </header>
 <nav class="bar" aria-label="Sections">
@@ -309,7 +354,7 @@ nav.bar a[aria-current="page"]{opacity:1;color:var(--spot)}
     <a href="index.html#how">How it works</a>
     <a href="index.html#training">Training</a>
     <a href="index.html#alumni">Alumni</a>
-    <a href="2025.html">Past finalists</a>
+    <a href="index.html#winners">Past winners</a>
     <a href="index.html#opportunities">Opportunities</a>
     <a href="index.html#join">Join</a>
     <span class="yr-sep" aria-hidden="true"></span>
