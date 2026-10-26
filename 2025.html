@@ -103,12 +103,36 @@ nav.bar a.nav-apply{color:var(--spot);opacity:1;font-weight:600}
 .banner img{display:block;width:100%;height:auto;max-width:none}
 .banner .word{display:block;font-family:var(--f-display);font-weight:800;font-size:clamp(3.4rem,13vw,9rem);letter-spacing:-.02em;line-height:1;padding-block:28px}
 .banner .word small{display:block;font-family:var(--f-mono);font-weight:500;font-size:.85rem;letter-spacing:.16em;text-transform:uppercase;color:var(--spot);margin-top:12px}
+.li-link{color:#0a66c2;display:inline-flex;vertical-align:middle}
 .btn.linkedin{background:#0a66c2;color:#ffffff;border-color:#0a66c2}
 .btn.linkedin:hover{background:#004182;border-color:#004182}
 .li-icon{flex-shrink:0;display:inline-block;vertical-align:-3px}
 .ab-links{display:flex;gap:6px 18px;flex-wrap:wrap}
 .ab-li{display:inline-flex;align-items:center;gap:6px}
 nav.bar a.nav-li{display:inline-flex;align-items:center;gap:6px;margin-left:auto;opacity:1}
+/*NWF*/
+.nwf-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.nwf-filters button{font:600 .9rem var(--f-body);padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.nwf-filters button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.nwf-year{margin-top:8px}
+.nwf-year+.nwf-year{margin-top:32px}
+.nwf-yh{display:flex;align-items:baseline;gap:14px;margin-bottom:14px}
+.nwf-yh h3{font-family:var(--f-mono);font-size:1.6rem;color:var(--accent)}
+.nwf-yh span{font-size:.9rem;color:var(--muted)}
+.nwf-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.nwf{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;display:grid;grid-template-columns:44px minmax(0,1fr);gap:4px 14px;align-content:start;min-width:0}
+.nwf .av{grid-row:span 4;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font:800 .95rem var(--f-display);background:var(--line);color:var(--ink)}
+.nwf.win{border-color:var(--spot);box-shadow:inset 0 0 0 1px var(--spot)}
+.nwf.win .av{background:var(--spot);color:#141a33}
+.nwf h4{margin:0;font-family:var(--f-display);font-size:1.05rem;line-height:1.25;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.nwf h4 a{color:#0a66c2;display:inline-flex}
+.nwf .ro{font-size:.85rem;color:var(--muted)}
+.nwf .tk{font-family:var(--f-display);font-weight:600;color:var(--accent);font-size:.95rem;line-height:1.35}
+.nwf .nt{font-size:.8rem;color:var(--muted);font-style:italic}
+.nwf .badge{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;background:var(--spot);color:#141a33;padding:2px 8px;border-radius:999px}
+@media (max-width:900px){.nwf-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.nwf-grid{grid-template-columns:1fr}}
+/*/NWF*/
 /* full-bleed hero */
 .hero{min-height:clamp(560px,50vw,760px);display:flex;align-items:center}
 .hero::after{content:none}
@@ -346,6 +370,29 @@ nav.bar a[aria-current="page"]{opacity:1;color:var(--spot)}
 @media (max-width:900px){.final{grid-template-columns:1fr}.regions{grid-template-columns:1fr 1fr}}
 @media (max-width:620px){.regions{grid-template-columns:1fr}.yhero .wrap,.nw{grid-template-columns:1fr}.facts-list div{grid-template-columns:1fr;gap:2px}}
 </style>
+<style>
+.nwf-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.nwf-filters button{font:600 .9rem var(--f-body);padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.nwf-filters button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.nwf-year{margin-top:8px}
+.nwf-year+.nwf-year{margin-top:32px}
+.nwf-yh{display:flex;align-items:baseline;gap:14px;margin-bottom:14px}
+.nwf-yh h3{font-family:var(--f-mono);font-size:1.6rem;color:var(--accent)}
+.nwf-yh span{font-size:.9rem;color:var(--muted)}
+.nwf-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.nwf{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;display:grid;grid-template-columns:44px minmax(0,1fr);gap:4px 14px;align-content:start;min-width:0}
+.nwf .av{grid-row:span 4;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font:800 .95rem var(--f-display);background:var(--line);color:var(--ink)}
+.nwf.win{border-color:var(--spot);box-shadow:inset 0 0 0 1px var(--spot)}
+.nwf.win .av{background:var(--spot);color:#141a33}
+.nwf h4{margin:0;font-family:var(--f-display);font-size:1.05rem;line-height:1.25;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.nwf h4 a{color:#0a66c2;display:inline-flex}
+.nwf .ro{font-size:.85rem;color:var(--muted)}
+.nwf .tk{font-family:var(--f-display);font-weight:600;color:var(--accent);font-size:.95rem;line-height:1.35}
+.nwf .nt{font-size:.8rem;color:var(--muted);font-style:italic}
+.nwf .badge{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;background:var(--spot);color:#141a33;padding:2px 8px;border-radius:999px}
+@media (max-width:900px){.nwf-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.nwf-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <header class="masthead">
@@ -437,6 +484,9 @@ nav.bar a[aria-current="page"]{opacity:1;color:var(--spot)}
 
 <a class="src" href="https://www.cheltenhamfestivals.org/news/famelab-uk-a-final-to-remember" target="_blank" rel="noopener">Source</a></article></div>
 </div></section>
+<section aria-labelledby="nwf-h"><div class="wrap"><div class="sec-head"><p class="eyebrow">North West Final 2025</p>
+<h2 id="nwf-h">The North West finalists</h2><p class="lede">Everyone who took the stage at the 2025 North West Final at Science and Industry Museum, Manchester.</p></div>
+<div class="nwf-year" data-year="2025"><div class="nwf-yh"><h3>2025</h3><span>10 finalists</span></div><div class="nwf-grid"><article class="nwf win"><span class="av" aria-hidden="true">EP</span><h4>Erin Pallott <span class="badge">NW winner</span></h4><p class="ro">PhD researcher · University of Manchester</p><p class="tk">&ldquo;Snot Just Slime!&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">CM</span><h4>Chris Myerscough</h4><p class="ro">Laboratory Manager · Liverpool School of Tropical Medicine</p><p class="tk">&ldquo;Pneumococcus: long studied, often unnoticed, yet still important!&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">LC</span><h4>Lois Clark</h4><p class="ro">Undergraduate, Wildlife Conservation with Zoo Biology · University of Salford</p><p class="tk">&ldquo;Why are animal bums so weird?&rdquo;</p><p class="nt">Back again in 2026</p></article><article class="nwf"><span class="av" aria-hidden="true">MA</span><h4>Melissa Azombi</h4><p class="ro">PhD researcher, Astronomy and Astrophysics · University of Manchester</p><p class="tk">&ldquo;Your Stellar Journey&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">SS</span><h4>Silas Yenbon Sebire</h4><p class="ro">PhD candidate · Edge Hill University</p><p class="tk">&ldquo;Bridging the gap: developing nurse managers in evidence-based practice&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">HO</span><h4>Holly O&#x27;Dea</h4><p class="ro">Principal Clinical Scientist in Genetics · NHS</p><p class="tk">&ldquo;The genetic test that could save your life&rdquo;</p><p class="nt">Known online as The Scouse Scientist</p></article><article class="nwf"><span class="av" aria-hidden="true">MJ</span><h4>Megan Jones</h4><p class="ro">PhD researcher · University of Manchester</p><p class="tk">&ldquo;Dinosaurs: now in colour&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">KS</span><h4>Kirsty Styles</h4><p class="ro">Journalism lecturer · University of Huddersfield</p><p class="tk">&ldquo;Why we&#x27;re still trashing the planet, and what it might take for us to stop&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">LB</span><h4>Laura Bih</h4><p class="ro">MSc student, Biotechnology · University of Salford</p><p class="tk">&ldquo;Making vaccines edible!&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">LM</span><h4>Lonnie MacDonald</h4><p class="ro">PhD researcher · University of Liverpool</p><p class="tk">&ldquo;T-cells: a patient&#x27;s friend and foe&rdquo;</p></article></div></div></div></section>
 
 <section><div class="wrap ynav">
 <a class="btn" style="border-color:var(--line);color:var(--ink)" href="2024.html">&larr; 2024</a>

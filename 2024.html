@@ -103,12 +103,36 @@ nav.bar a.nav-apply{color:var(--spot);opacity:1;font-weight:600}
 .banner img{display:block;width:100%;height:auto;max-width:none}
 .banner .word{display:block;font-family:var(--f-display);font-weight:800;font-size:clamp(3.4rem,13vw,9rem);letter-spacing:-.02em;line-height:1;padding-block:28px}
 .banner .word small{display:block;font-family:var(--f-mono);font-weight:500;font-size:.85rem;letter-spacing:.16em;text-transform:uppercase;color:var(--spot);margin-top:12px}
+.li-link{color:#0a66c2;display:inline-flex;vertical-align:middle}
 .btn.linkedin{background:#0a66c2;color:#ffffff;border-color:#0a66c2}
 .btn.linkedin:hover{background:#004182;border-color:#004182}
 .li-icon{flex-shrink:0;display:inline-block;vertical-align:-3px}
 .ab-links{display:flex;gap:6px 18px;flex-wrap:wrap}
 .ab-li{display:inline-flex;align-items:center;gap:6px}
 nav.bar a.nav-li{display:inline-flex;align-items:center;gap:6px;margin-left:auto;opacity:1}
+/*NWF*/
+.nwf-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.nwf-filters button{font:600 .9rem var(--f-body);padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.nwf-filters button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.nwf-year{margin-top:8px}
+.nwf-year+.nwf-year{margin-top:32px}
+.nwf-yh{display:flex;align-items:baseline;gap:14px;margin-bottom:14px}
+.nwf-yh h3{font-family:var(--f-mono);font-size:1.6rem;color:var(--accent)}
+.nwf-yh span{font-size:.9rem;color:var(--muted)}
+.nwf-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.nwf{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;display:grid;grid-template-columns:44px minmax(0,1fr);gap:4px 14px;align-content:start;min-width:0}
+.nwf .av{grid-row:span 4;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font:800 .95rem var(--f-display);background:var(--line);color:var(--ink)}
+.nwf.win{border-color:var(--spot);box-shadow:inset 0 0 0 1px var(--spot)}
+.nwf.win .av{background:var(--spot);color:#141a33}
+.nwf h4{margin:0;font-family:var(--f-display);font-size:1.05rem;line-height:1.25;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.nwf h4 a{color:#0a66c2;display:inline-flex}
+.nwf .ro{font-size:.85rem;color:var(--muted)}
+.nwf .tk{font-family:var(--f-display);font-weight:600;color:var(--accent);font-size:.95rem;line-height:1.35}
+.nwf .nt{font-size:.8rem;color:var(--muted);font-style:italic}
+.nwf .badge{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;background:var(--spot);color:#141a33;padding:2px 8px;border-radius:999px}
+@media (max-width:900px){.nwf-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.nwf-grid{grid-template-columns:1fr}}
+/*/NWF*/
 /* full-bleed hero */
 .hero{min-height:clamp(560px,50vw,760px);display:flex;align-items:center}
 .hero::after{content:none}
@@ -346,6 +370,29 @@ nav.bar a[aria-current="page"]{opacity:1;color:var(--spot)}
 @media (max-width:900px){.final{grid-template-columns:1fr}.regions{grid-template-columns:1fr 1fr}}
 @media (max-width:620px){.regions{grid-template-columns:1fr}.yhero .wrap,.nw{grid-template-columns:1fr}.facts-list div{grid-template-columns:1fr;gap:2px}}
 </style>
+<style>
+.nwf-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.nwf-filters button{font:600 .9rem var(--f-body);padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.nwf-filters button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.nwf-year{margin-top:8px}
+.nwf-year+.nwf-year{margin-top:32px}
+.nwf-yh{display:flex;align-items:baseline;gap:14px;margin-bottom:14px}
+.nwf-yh h3{font-family:var(--f-mono);font-size:1.6rem;color:var(--accent)}
+.nwf-yh span{font-size:.9rem;color:var(--muted)}
+.nwf-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.nwf{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;display:grid;grid-template-columns:44px minmax(0,1fr);gap:4px 14px;align-content:start;min-width:0}
+.nwf .av{grid-row:span 4;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font:800 .95rem var(--f-display);background:var(--line);color:var(--ink)}
+.nwf.win{border-color:var(--spot);box-shadow:inset 0 0 0 1px var(--spot)}
+.nwf.win .av{background:var(--spot);color:#141a33}
+.nwf h4{margin:0;font-family:var(--f-display);font-size:1.05rem;line-height:1.25;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.nwf h4 a{color:#0a66c2;display:inline-flex}
+.nwf .ro{font-size:.85rem;color:var(--muted)}
+.nwf .tk{font-family:var(--f-display);font-weight:600;color:var(--accent);font-size:.95rem;line-height:1.35}
+.nwf .nt{font-size:.8rem;color:var(--muted);font-style:italic}
+.nwf .badge{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;background:var(--spot);color:#141a33;padding:2px 8px;border-radius:999px}
+@media (max-width:900px){.nwf-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.nwf-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <header class="masthead">
@@ -429,6 +476,9 @@ nav.bar a[aria-current="page"]{opacity:1;color:var(--spot)}
 
 <a class="src" href="https://www.cheltenhamfestivals.org/news/famelab-uk-2024-back-with-a-bang" target="_blank" rel="noopener">Source</a></article></div>
 </div></section>
+<section aria-labelledby="nwf-h"><div class="wrap"><div class="sec-head"><p class="eyebrow">North West Final 2024</p>
+<h2 id="nwf-h">The North West finalists</h2><p class="lede">Everyone who took the stage at the 2024 North West Final at LEAF, Bold Street, Liverpool.</p></div>
+<div class="nwf-year" data-year="2024"><div class="nwf-yh"><h3>2024</h3><span>7 finalists</span></div><div class="nwf-grid"><article class="nwf win"><span class="av" aria-hidden="true">BF</span><h4>Bethany Facer <a href="https://www.linkedin.com/in/bethany-facer/" target="_blank" rel="noopener" aria-label="Bethany Facer on LinkedIn"><svg class="li-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a> <span class="badge">NW winner</span></h4><p class="ro">PhD researcher · University of Liverpool</p><p class="tk">&ldquo;To Move Again: A Parkinson&#x27;s Tale&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">IP</span><h4>Isabel Pazminomayorga</h4><p class="ro">Postdoctoral researcher · University of Manchester</p><p class="tk">&ldquo;Super Looping: the climate avenger&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">ML</span><h4>Matthew Lee</h4><p class="ro">Doctor</p><p class="tk">&ldquo;One Life, One Planet, One Health&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">IA</span><h4>Ieva Andrulytė <a href="https://www.linkedin.com/in/ieva-andrulyte/" target="_blank" rel="noopener" aria-label="Ieva Andrulytė on LinkedIn"><svg class="li-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a></h4><p class="ro">PhD researcher · University of Liverpool</p><p class="tk">&ldquo;From frogs to princes: exploring brain connectivity&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">CW</span><h4>Christida Wastika</h4><p class="ro">Postdoctoral researcher · Liverpool School of Tropical Medicine</p><p class="tk">&ldquo;Mozzie the postman: can I deliver your virus?&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">VT</span><h4>Venera Tyukmaeva</h4><p class="ro">Lecturer · University of Liverpool</p><p class="tk">&ldquo;Sleepless&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">RR</span><h4>Rachel Ridgway</h4><p class="ro">PhD researcher · University of Liverpool</p><p class="tk">&ldquo;Me and Daisy: a coming of phage story&rdquo;</p></article></div></div></div></section>
 
 <section><div class="wrap ynav">
 <span></span>

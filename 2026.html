@@ -103,12 +103,36 @@ nav.bar a.nav-apply{color:var(--spot);opacity:1;font-weight:600}
 .banner img{display:block;width:100%;height:auto;max-width:none}
 .banner .word{display:block;font-family:var(--f-display);font-weight:800;font-size:clamp(3.4rem,13vw,9rem);letter-spacing:-.02em;line-height:1;padding-block:28px}
 .banner .word small{display:block;font-family:var(--f-mono);font-weight:500;font-size:.85rem;letter-spacing:.16em;text-transform:uppercase;color:var(--spot);margin-top:12px}
+.li-link{color:#0a66c2;display:inline-flex;vertical-align:middle}
 .btn.linkedin{background:#0a66c2;color:#ffffff;border-color:#0a66c2}
 .btn.linkedin:hover{background:#004182;border-color:#004182}
 .li-icon{flex-shrink:0;display:inline-block;vertical-align:-3px}
 .ab-links{display:flex;gap:6px 18px;flex-wrap:wrap}
 .ab-li{display:inline-flex;align-items:center;gap:6px}
 nav.bar a.nav-li{display:inline-flex;align-items:center;gap:6px;margin-left:auto;opacity:1}
+/*NWF*/
+.nwf-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.nwf-filters button{font:600 .9rem var(--f-body);padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.nwf-filters button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.nwf-year{margin-top:8px}
+.nwf-year+.nwf-year{margin-top:32px}
+.nwf-yh{display:flex;align-items:baseline;gap:14px;margin-bottom:14px}
+.nwf-yh h3{font-family:var(--f-mono);font-size:1.6rem;color:var(--accent)}
+.nwf-yh span{font-size:.9rem;color:var(--muted)}
+.nwf-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.nwf{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;display:grid;grid-template-columns:44px minmax(0,1fr);gap:4px 14px;align-content:start;min-width:0}
+.nwf .av{grid-row:span 4;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font:800 .95rem var(--f-display);background:var(--line);color:var(--ink)}
+.nwf.win{border-color:var(--spot);box-shadow:inset 0 0 0 1px var(--spot)}
+.nwf.win .av{background:var(--spot);color:#141a33}
+.nwf h4{margin:0;font-family:var(--f-display);font-size:1.05rem;line-height:1.25;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.nwf h4 a{color:#0a66c2;display:inline-flex}
+.nwf .ro{font-size:.85rem;color:var(--muted)}
+.nwf .tk{font-family:var(--f-display);font-weight:600;color:var(--accent);font-size:.95rem;line-height:1.35}
+.nwf .nt{font-size:.8rem;color:var(--muted);font-style:italic}
+.nwf .badge{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;background:var(--spot);color:#141a33;padding:2px 8px;border-radius:999px}
+@media (max-width:900px){.nwf-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.nwf-grid{grid-template-columns:1fr}}
+/*/NWF*/
 /* full-bleed hero */
 .hero{min-height:clamp(560px,50vw,760px);display:flex;align-items:center}
 .hero::after{content:none}
@@ -346,6 +370,29 @@ nav.bar a[aria-current="page"]{opacity:1;color:var(--spot)}
 @media (max-width:900px){.final{grid-template-columns:1fr}.regions{grid-template-columns:1fr 1fr}}
 @media (max-width:620px){.regions{grid-template-columns:1fr}.yhero .wrap,.nw{grid-template-columns:1fr}.facts-list div{grid-template-columns:1fr;gap:2px}}
 </style>
+<style>
+.nwf-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.nwf-filters button{font:600 .9rem var(--f-body);padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.nwf-filters button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.nwf-year{margin-top:8px}
+.nwf-year+.nwf-year{margin-top:32px}
+.nwf-yh{display:flex;align-items:baseline;gap:14px;margin-bottom:14px}
+.nwf-yh h3{font-family:var(--f-mono);font-size:1.6rem;color:var(--accent)}
+.nwf-yh span{font-size:.9rem;color:var(--muted)}
+.nwf-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.nwf{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;display:grid;grid-template-columns:44px minmax(0,1fr);gap:4px 14px;align-content:start;min-width:0}
+.nwf .av{grid-row:span 4;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font:800 .95rem var(--f-display);background:var(--line);color:var(--ink)}
+.nwf.win{border-color:var(--spot);box-shadow:inset 0 0 0 1px var(--spot)}
+.nwf.win .av{background:var(--spot);color:#141a33}
+.nwf h4{margin:0;font-family:var(--f-display);font-size:1.05rem;line-height:1.25;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.nwf h4 a{color:#0a66c2;display:inline-flex}
+.nwf .ro{font-size:.85rem;color:var(--muted)}
+.nwf .tk{font-family:var(--f-display);font-weight:600;color:var(--accent);font-size:.95rem;line-height:1.35}
+.nwf .nt{font-size:.8rem;color:var(--muted);font-style:italic}
+.nwf .badge{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;background:var(--spot);color:#141a33;padding:2px 8px;border-radius:999px}
+@media (max-width:900px){.nwf-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.nwf-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <header class="masthead">
@@ -416,6 +463,9 @@ nav.bar a[aria-current="page"]{opacity:1;color:var(--spot)}
 <h3>Winner to be confirmed</h3><p class="inst">Hub: Edinburgh Science</p><p class="note">Not yet announced publicly.</p></article><article class="reg tbc"><p class="region">South East / South West</p>
 <h3>Winner to be confirmed</h3><p class="note">Not yet announced publicly.</p></article></div><p class="missing">7 of 10 regional winners for 2026 have not been announced publicly. Know who won? <a href="index.html#join">Tell us</a> and we’ll add them.</p>
 </div></section>
+<section aria-labelledby="nwf-h"><div class="wrap"><div class="sec-head"><p class="eyebrow">North West Final 2026</p>
+<h2 id="nwf-h">The North West finalists</h2><p class="lede">Everyone who took the stage at the 2026 North West Final at Lime Street Central, Liverpool.</p></div>
+<div class="nwf-year" data-year="2026"><div class="nwf-yh"><h3>2026</h3><span>11 finalists</span></div><div class="nwf-grid"><article class="nwf"><span class="av" aria-hidden="true">AT</span><h4>Arnas Tamasauskas</h4><p class="ro">PhD researcher · University of Liverpool</p><p class="tk">&ldquo;Born This Way: The Fibromyalgia Experience&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">CB</span><h4>Cherene De Bruyn</h4><p class="ro">PhD researcher · Liverpool John Moores University</p><p class="tk">&ldquo;Eye in the Sky: Drones on the trail of the missing&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">KD</span><h4>Kay Dewhurst</h4><p class="ro">Technician · University of Manchester</p><p class="tk">&ldquo;Particle Accelerators All Around You&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">OK</span><h4>Olga Tereszkowska-Kaminska</h4><p class="ro">PhD researcher · University of Liverpool</p><p class="tk">&ldquo;Bang goes the cancer cell&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">SC</span><h4>Skye Crawford</h4><p class="ro">PhD researcher · Liverpool John Moores University</p><p class="tk">&ldquo;The Invasive Species You&#x27;re Carrying&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">DK</span><h4>Deepanshi Karwall</h4><p class="ro">PhD researcher · University of Manchester</p><p class="tk">&ldquo;99.99%&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">DI</span><h4>Dimitri Iarovoi</h4><p class="ro">PhD researcher · Wrexham University</p><p class="tk">&ldquo;How Welsh castles help us build a fair ChatGPT&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">OE</span><h4>Owen Eaton</h4><p class="ro">Bangor University</p><p class="tk">&ldquo;Of Butterflies and Bison&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">LC</span><h4>Lois Clark</h4><p class="ro">Undergraduate · University of Salford</p><p class="tk">&ldquo;The power of a sponge&rdquo;</p><p class="nt">Also a 2025 finalist</p></article><article class="nwf"><span class="av" aria-hidden="true">LB</span><h4>Lucia Galvez-Bravo</h4><p class="ro">Senior Lecturer · Liverpool John Moores University</p><p class="tk">&ldquo;Bob the beaver&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">GM</span><h4>Gavin McStay</h4><p class="ro">Senior Lecturer · Liverpool John Moores University</p><p class="tk">&ldquo;Mitochondria Matters&rdquo;</p></article></div></div></div></section>
 <section aria-labelledby="oth-h"><div class="wrap"><div class="sec-head"><p class="eyebrow">Regional finals</p>
 <h2 id="oth-h">Also on stage in 2026</h2><p class="lede">Other speakers named publicly by the regional hubs.</p></div>
 <div class="tablewrap"><table class="people"><thead><tr><th>Name</th><th>Institution</th><th>Region</th><th>Placing</th></tr></thead><tbody><tr><td>Fabia Hannan Mone</td><td>University of Westminster</td><td>London</td><td>Regional winner</td></tr><tr><td>Sam Horrell</td><td>Imperial College London</td><td>London</td><td>1st runner-up (also podium in 2025)</td></tr><tr><td>Conor Noonan</td><td>Royal Veterinary College</td><td>London</td><td>2nd runner-up</td></tr><tr><td>Rohit Das</td><td>University of Oxford</td><td>London</td><td>Audience prize</td></tr><tr><td>Success Ajayi</td><td>University of Westminster</td><td>London</td><td>Regional finalist</td></tr><tr><td>Nada Ahmed</td><td>University College London</td><td>London</td><td>Regional finalist</td></tr><tr><td>Ramaa Sri Lalitha Sahitya Puvvada</td><td>University College London</td><td>London</td><td>Regional finalist</td></tr><tr><td>Beatriz Silveira De Arruda</td><td>University College London</td><td>London</td><td>Regional finalist</td></tr><tr><td>Qing Zhang</td><td>University College London</td><td>London</td><td>Regional finalist</td></tr><tr><td>Marifatul Amalia</td><td>University of Edinburgh</td><td>London</td><td>Regional finalist</td></tr><tr><td>Raman Van Wee</td><td>University of Oxford</td><td>London</td><td>Regional finalist</td></tr><tr><td>Katie McGaughey</td><td></td><td>Northern Ireland</td><td>Regional finalist</td></tr></tbody></table></div></div></section>
