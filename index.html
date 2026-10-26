@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FameLab North West</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="The FameLab North West hub: training, alumni, dates and opportunities for science communicators across the region. Run by the University of Salford and the University of Liverpool.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: a stage. One bold "3:00" spotlight hero, then calm sections on a cool paper ground; amber = spotlight, cobalt = action. */
+:root{
+  --bg:#f5f6f9; --surface:#ffffff; --ink:#151a2b; --muted:#5b6275; --line:#dde1ea;
+  --accent:#2b4fd6; --accent-ink:#ffffff; --spot:#f2b631; --spot-soft:#fdf1d4;
+  --stage:#141a33; --stage-ink:#eef0f8;
+  --f-display:"Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Figtree", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1220; --surface:#171b2e; --ink:#e8eaf3; --muted:#a2a8bd; --line:#2a3048;
+  --accent:#7d97ff; --accent-ink:#0f1220; --spot:#f2b631; --spot-soft:#2b2512;
+  --stage:#0a0d19; --stage-ink:#eef0f8; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1220; --surface:#171b2e; --ink:#e8eaf3; --muted:#a2a8bd; --line:#2a3048;
+  --accent:#7d97ff; --accent-ink:#0f1220; --spot:#f2b631; --spot-soft:#2b2512;
+  --stage:#0a0d19; --stage-ink:#eef0f8; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--spot);outline-offset:2px}
+h1,h2,h3{font-family:var(--f-display);line-height:1.1;text-wrap:balance;margin:0}
+h2{font-size:clamp(1.9rem,4vw,2.7rem);font-weight:800;letter-spacing:-.01em}
+h3{font-size:1.25rem;font-weight:700}
+p{margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.lede{color:var(--muted);max-width:62ch;font-size:1.08rem}
+section{padding-block:clamp(56px,8vw,96px)}
+section+section{border-top:1px solid var(--line)}
+.sec-head{display:grid;gap:12px;margin-bottom:36px}
+
+/* header */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--stage)}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--stage);color:var(--stage-ink)}
+header.top .wrap{display:flex;align-items:center;gap:20px;padding-block:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.brand img{height:34px;width:auto;display:block}
+.brand .word{font-family:var(--f-display);font-weight:800;font-size:1.15rem;letter-spacing:-.01em}
+.brand .word small{font-family:var(--f-mono);font-weight:500;font-size:.7rem;letter-spacing:.14em;color:var(--spot);margin-left:6px}
+nav.links{display:flex;gap:4px 18px;flex-wrap:wrap;margin-left:auto}
+nav.links a{color:var(--stage-ink);text-decoration:none;font-size:.95rem;opacity:.85}
+nav.links a:hover{opacity:1;text-decoration:underline;text-decoration-color:var(--spot)}
+
+/* hero */
+.hero{background:var(--stage);color:var(--stage-ink);padding-block:clamp(48px,7vw,88px);border:0;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:-30% -10% auto auto;width:70vmin;height:70vmin;border-radius:50%;
+  background:radial-gradient(circle, rgba(242,182,49,.30), rgba(242,182,49,0) 65%);pointer-events:none}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;position:relative;z-index:1}
+.hero h1{font-size:clamp(2.4rem,6vw,4.4rem);font-weight:800;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;color:var(--spot)}
+.hero p.lede{color:#c3c8dc;margin-top:20px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 1rem var(--f-body);padding:12px 20px;border-radius:999px;text-decoration:none;border:2px solid transparent;cursor:pointer}
+.btn.primary{background:var(--spot);color:#141a33}
+.btn.ghost{border-color:rgba(238,240,248,.4);color:var(--stage-ink);background:transparent}
+.btn.ghost:hover{border-color:var(--stage-ink)}
+.clock{font-family:var(--f-mono);font-weight:700;font-size:clamp(5rem,16vw,10rem);line-height:.9;color:var(--spot);text-align:center;letter-spacing:-.04em}
+.clock-cap{text-align:center;font-family:var(--f-mono);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:#c3c8dc;margin-top:10px}
+.facts{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:36px;padding-top:24px;border-top:1px solid rgba(238,240,248,.15);font-size:.92rem;color:#c3c8dc}
+.facts b{color:var(--stage-ink);font-weight:600}
+
+/* journey */
+.journey{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,1fr);gap:0;counter-reset:s}
+.journey li{counter-increment:s;padding:20px 16px 0 0;border-top:3px solid var(--line);position:relative;min-width:0}
+.journey li::before{content:counter(s);position:absolute;top:-15px;left:0;width:28px;height:28px;border-radius:50%;background:var(--surface);border:3px solid var(--accent);font:700 .8rem/22px var(--f-mono);text-align:center;color:var(--accent)}
+.journey li.here{border-top-color:var(--spot)}
+.journey li.here::before{border-color:var(--spot);background:var(--spot);color:#141a33}
+.journey .when{font-family:var(--f-mono);font-size:.78rem;color:var(--muted);margin-top:6px}
+.journey h3{font-size:1.05rem;margin-top:6px}
+.journey p{font-size:.92rem;color:var(--muted);margin-top:6px}
+.note{font-size:.88rem;color:var(--muted);margin-top:24px}
+
+/* training */
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.c{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:grid;gap:10px;align-content:start}
+.c .big{font-family:var(--f-display);font-weight:800;font-size:2.4rem;color:var(--accent);line-height:1}
+.c ul{margin:0;padding-left:18px;color:var(--muted);font-size:.95rem;display:grid;gap:6px}
+.train-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:28px;align-items:start}
+.timer{background:var(--stage);color:var(--stage-ink);border-radius:var(--r);padding:28px;display:grid;gap:18px;text-align:center}
+.timer .t{font-family:var(--f-mono);font-weight:700;font-size:clamp(3.6rem,10vw,5.5rem);line-height:1;font-variant-numeric:tabular-nums}
+.timer .t.warn{color:var(--spot)} .timer .t.over{color:#ff7a6b}
+.timer .bar{height:6px;background:rgba(238,240,248,.15);border-radius:3px;overflow:hidden}
+.timer .bar i{display:block;height:100%;width:100%;background:var(--spot);transform-origin:left;transition:transform .25s linear}
+.timer .row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.timer .hint{font-size:.88rem;color:#c3c8dc;min-height:1.4em}
+.timer button{font:600 .95rem var(--f-body);padding:10px 18px;border-radius:999px;border:2px solid rgba(238,240,248,.35);background:transparent;color:var(--stage-ink);cursor:pointer}
+.timer button.go{background:var(--spot);border-color:var(--spot);color:#141a33}
+.build{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.build ol{margin:12px 0 0;padding-left:20px;display:grid;gap:10px}
+.build ol b{font-weight:600}
+.build ol span{color:var(--muted)}
+.res{display:grid;grid-template-columns:repeat(2,1fr);gap:0 32px;margin-top:36px}
+.res a{display:grid;gap:2px;padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink)}
+.res a:hover strong{color:var(--accent)}
+.res a span{font-size:.9rem;color:var(--muted)}
+
+/* alumni */
+.draft{display:inline-block;font-family:var(--f-mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;background:var(--spot-soft);color:var(--ink);padding:4px 10px;border-radius:999px}
+.alumni{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.person{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:grid;gap:12px;align-content:start;min-width:0}
+.avatar{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font:800 1.2rem var(--f-display);background:var(--accent);color:var(--accent-ink)}
+.person .meta{font-family:var(--f-mono);font-size:.78rem;color:var(--muted)}
+.person .talk{font-family:var(--f-display);font-weight:700;font-size:1.05rem}
+.person dl{margin:0;display:grid;gap:8px;font-size:.93rem}
+.person dt{font-weight:600}
+.person dd{margin:0;color:var(--muted)}
+.person.open{background:transparent;border-style:dashed;place-content:center;text-align:center;justify-items:center}
+.person.open .avatar{background:var(--spot);color:#141a33}
+.finals{margin-top:44px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.finals div{padding:18px 18px 0 0}
+.finals .y{font-family:var(--f-display);font-weight:800;font-size:1.6rem}
+.finals p{font-size:.92rem;color:var(--muted)}
+
+/* events */
+.dates{display:grid;gap:0;border-top:1px solid var(--line)}
+.date{display:grid;grid-template-columns:150px 1fr auto;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.date .d{font-family:var(--f-mono);font-weight:700;font-variant-numeric:tabular-nums}
+.date .w{font-size:.92rem;color:var(--muted)}
+.tag{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:999px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.tag.confirm{border-color:var(--spot);color:var(--ink);background:var(--spot-soft)}
+
+/* opportunities */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.filters button{font:600 .9rem var(--f-body);padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.opps{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.opp{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px;display:grid;gap:8px;min-width:0}
+.opp .top{display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap}
+.opp p{font-size:.94rem;color:var(--muted)}
+.opp a{font-weight:600;font-size:.94rem}
+
+/* join */
+.join{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:start}
+form{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:grid;gap:16px}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:grid;gap:6px;font-weight:600;font-size:.92rem}
+label span{font-weight:400;color:var(--muted);font-size:.85rem}
+input,select,textarea{font:inherit;font-size:1rem;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);width:100%}
+textarea{min-height:96px;resize:vertical}
+fieldset{border:0;padding:0;margin:0;display:grid;gap:8px}
+legend{font-weight:600;font-size:.92rem;margin-bottom:6px}
+.checks{display:flex;flex-wrap:wrap;gap:8px 18px}
+.checks label{display:flex;gap:8px;align-items:center;font-weight:400}
+.checks input{width:auto}
+.consent{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:.9rem;color:var(--muted)}
+.consent input{width:auto;margin-top:4px}
+.form-msg{font-size:.95rem;padding:12px 14px;border-radius:8px;background:var(--spot-soft)}
+.form-msg[data-kind="error"]{background:transparent;border:1px solid #d9534f}
+.why{display:grid;gap:18px}
+.why li{color:var(--muted)}
+.why ul{margin:0;padding-left:18px;display:grid;gap:8px}
+blockquote{margin:0;padding:18px 20px;border-left:4px solid var(--spot);background:var(--surface);border-radius:0 var(--r) var(--r) 0;font-family:var(--f-display);font-size:1.15rem;font-weight:500}
+blockquote cite{display:block;font:500 .85rem var(--f-body);color:var(--muted);margin-top:8px;font-style:normal}
+
+.tally-wrap{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px 16px;min-width:0}
+.tally-wrap iframe{display:block;border:0;width:100%}
+.tally-alt{font-size:.9rem;color:var(--muted);padding-block:8px}
+footer{background:var(--stage);color:#c3c8dc;padding-block:40px;font-size:.9rem}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px}
+footer a{color:var(--stage-ink)}
+footer h3{color:var(--stage-ink);font-size:1rem;margin-bottom:8px}
+footer address{font-style:normal}
+.small{font-size:.8rem;opacity:.8;margin-top:16px}
+
+@media (max-width:900px){
+  .hero .wrap,.train-grid,.join{grid-template-columns:1fr}
+  .journey{grid-template-columns:repeat(3,1fr);row-gap:32px}
+  .alumni,.three{grid-template-columns:1fr 1fr}
+  footer .wrap{grid-template-columns:1fr 1fr}
+}
+@media (max-width:620px){
+  nav.links{margin-left:0;gap:4px 14px}
+  .journey{grid-template-columns:1fr 1fr}
+  .alumni,.three,.opps,.res,.finals,.fr{grid-template-columns:1fr}
+  .date{grid-template-columns:1fr;gap:4px}
+  footer .wrap{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="FameLab North West home">
+      <img id="logo" alt="FameLab" src="https://images.squarespace-cdn.com/content/v1/583218b459cc687f522b226b/5aed5bc8-1b85-4148-9248-b87df6edaaae/FameLab+primary+logo+white.ai.jpg?format=500w" hidden>
+      <span class="word" id="wordmark">FameLab<small>NORTH WEST</small></span>
+    </a>
+    <nav class="links" aria-label="Sections">
+      <a href="#how">How it works</a>
+      <a href="#training">Training</a>
+      <a href="#alumni">Alumni</a>
+      <a href="#dates">Dates</a>
+      <a href="#opportunities">Opportunities</a>
+      <a href="#join">Join</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow" style="color:#c3c8dc">FameLab North West Hub · Salford &amp; Liverpool</p>
+      <h1 id="hero-h">Three minutes. One prop. <em>Your research</em>, on stage.</h1>
+      <p class="lede">FameLab is the world's largest science communication competition and training programme. The North West hub trains researchers from across the region, puts them in front of a live audience, and sends one winner to the UK Final at Cheltenham Science Festival. This is where our community lives between the finals.</p>
+      <div class="cta">
+        <a class="btn primary" href="#join">Join the community</a>
+        <a class="btn ghost" href="#training">Start training</a>
+      </div>
+      <div class="facts">
+        <span><b>2024</b> hub founded</span>
+        <span><b>3</b> regional finals</span>
+        <span><b>2</b> North West UK finalists</span>
+        <span><b>100+</b> audience at a sold-out 2024 final</span>
+      </div>
+    </div>
+    <div aria-hidden="true">
+      <div class="clock">3:00</div>
+      <p class="clock-cap">Content · Clarity · Charisma</p>
+    </div>
+  </div>
+</section>
+
+<section id="how" aria-labelledby="how-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">How it works</p>
+      <h2 id="how-h">From application to the world stage</h2>
+      <p class="lede">Open to researchers in science, social science, technology, engineering, maths and medicine, from PhD students to lecturers and specialist science teachers. Full-time science communicators aren't eligible.</p>
+    </div>
+    <ol class="journey">
+      <li class="here"><p class="when">Oct – mid Jan</p><h3>Apply</h3><p>Online form via Cheltenham Festivals. North West applicants come to this hub.</p></li>
+      <li><p class="when">Late Jan – Feb</p><h3>Hub training</h3><p>Free online sessions on building a three-minute talk, run by Salford and Liverpool.</p></li>
+      <li><p class="when">March</p><h3>North West Final</h3><p>Shortlisted speakers perform live to an audience and judges.</p></li>
+      <li><p class="when">Early May</p><h3>Masterclass</h3><p>The regional winner gets a fully funded two-day masterclass in Cheltenham.</p></li>
+      <li><p class="when">June</p><h3>UK Final</h3><p>Live at Cheltenham Science Festival, against every UK region's winner.</p></li>
+      <li><p class="when">Autumn</p><h3>International</h3><p>The UK champion represents the country at the FameLab International Final.</p></li>
+    </ol>
+    <p class="note">The rules never change: three minutes, any STEMM topic, and only the props you can carry on stage yourself. Exact dates for each cycle are set by Cheltenham Festivals and posted under <a href="#dates">Dates</a>.</p>
+  </div>
+</section>
+
+<section id="training" aria-labelledby="train-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Training hub</p>
+      <h2 id="train-h">Judges score three things</h2>
+      <p class="lede">Every FameLab talk is judged on the three Cs. Use them as a checklist when you draft, rehearse and get feedback.</p>
+    </div>
+    <div class="three">
+      <article class="c">
+        <span class="big">Content</span>
+        <p>Is the science accurate, and does the talk say something worth knowing?</p>
+        <ul><li>One idea, not your whole thesis</li><li>A fact the audience will repeat at dinner</li><li>Why it matters beyond the lab</li></ul>
+      </article>
+      <article class="c">
+        <span class="big">Clarity</span>
+        <p>Could someone with no science background follow every step?</p>
+        <ul><li>No jargon you haven't earned</li><li>An analogy built from everyday things</li><li>A clear start, middle and end</li></ul>
+      </article>
+      <article class="c">
+        <span class="big">Charisma</span>
+        <p>Do people want to keep listening? This is about presence, not polish.</p>
+        <ul><li>Your own voice and enthusiasm</li><li>A prop that does real work</li><li>Eye contact, pace and pauses</li></ul>
+      </article>
+    </div>
+
+    <div class="train-grid">
+      <div class="timer" role="group" aria-labelledby="timer-h">
+        <p class="eyebrow" id="timer-h" style="color:#c3c8dc">Rehearsal timer</p>
+        <div class="t" id="t" aria-live="off">3:00</div>
+        <div class="bar" aria-hidden="true"><i id="bar"></i></div>
+        <p class="hint" id="hint" aria-live="polite">Press start and deliver your talk out loud.</p>
+        <div class="row">
+          <button class="go" id="go" type="button">Start</button>
+          <button id="reset" type="button">Reset</button>
+        </div>
+      </div>
+      <div class="build">
+        <h3>Build a talk in five moves</h3>
+        <ol>
+          <li><b>Hook in ten seconds.</b> <span>Open with a question, a surprise or the prop, never "Hi, I'm a PhD student in…"</span></li>
+          <li><b>Name the problem.</b> <span>What's at stake, and for whom? Make it human.</span></li>
+          <li><b>Explain one mechanism.</b> <span>The single piece of science your story rests on, told through an analogy.</span></li>
+          <li><b>Show what you found or do.</b> <span>Your contribution, in a sentence a 14-year-old could retell.</span></li>
+          <li><b>Land it.</b> <span>Return to the hook. Finish on time with a line people remember.</span></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="res">
+      <a href="https://www.youtube.com/@famelab" target="_blank" rel="noopener"><strong>FameLab on YouTube</strong><span>Past UK and International Final talks to learn from</span></a>
+      <a href="https://www.cheltenhamfestivals.org/our-projects/famelab/famelab-uk" target="_blank" rel="noopener"><strong>FameLab UK at Cheltenham Festivals</strong><span>Rules, eligibility, the participant guide and each year's finalists</span></a>
+      <a href="https://www.youtube.com/watch?v=a9oh24GTLDM" target="_blank" rel="noopener"><strong>Watch: Erin Pallott, UK Final 2025</strong><span>Our 2025 regional winner's talk, Snot Just Slime!</span></a>
+      <a href="https://www.liverpool.ac.uk/health-and-life-sciences/engage-with-us/public-engagement/blog/public-engagement/fame-lab/" target="_blank" rel="noopener"><strong>Science in the Limelight</strong><span>Erin's account of doing FameLab as a nervous speaker</span></a>
+      <a href="https://www.liverpool.ac.uk/health-and-life-sciences/engage-with-us/public-engagement/blog/public-engagement/famelab-2024" target="_blank" rel="noopener"><strong>Three reasons to sign up</strong><span>Bethany Facer on training, the stage and the community</span></a>
+      <a href="https://scicomm.space/famelab" target="_blank" rel="noopener"><strong>Hub page on The SPACE</strong><span>The University of Salford's FameLab page and diary posts</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="alumni" aria-labelledby="alumni-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Alumni</p>
+      <h2 id="alumni-h">Where our speakers go next</h2>
+      <p class="lede">FameLab is the start of something. Our alumni lead science communication projects, sit on national boards and come back to compère and coach the next cohort.</p>
+      <!-- REMOVE this badge once profiles are confirmed with each person -->
+      <p><span class="draft">Profiles drafted from public sources · awaiting confirmation</span></p>
+    </div>
+    <div class="alumni">
+      <article class="person">
+        <div class="avatar" aria-hidden="true">BF</div>
+        <div><h3>Bethany Facer</h3><p class="meta">NW Winner 2024 · UK Finalist 2024 · University of Liverpool</p></div>
+        <p class="talk">Neuroscience and neuroimaging: brain scans and Parkinson's disease</p>
+        <dl>
+          <dt>Since FameLab</dt>
+          <dd>Completed a PhD on white-matter changes in newly diagnosed Parkinson's. Early Career Researcher Trustee for the British Neuroscience Association. Runs science-comedy nights and podcasts. Compèred the 2026 North West Final.</dd>
+        </dl>
+      </article>
+      <article class="person">
+        <div class="avatar" aria-hidden="true">EP</div>
+        <div><h3>Erin Pallott</h3><p class="meta">NW Winner 2025 · UK Finalist 2025</p></div>
+        <p class="talk">Biology, intestinal mucus and parasitic worms: "Snot Just Slime!"</p>
+        <dl>
+          <dt>Since FameLab</dt>
+          <dd>Science Communication Officer at the University of Manchester. Leads the Research Hive blog for early-career researchers and won a 2025 Faculty award for outstanding PPIE. Guest speaker at the 2026 North West Final.</dd>
+        </dl>
+      </article>
+      <!-- 2026 NW winner: fill in name, talk and "since" from hub records -->
+      <article class="person">
+        <div class="avatar" aria-hidden="true">26</div>
+        <div><h3>2026 North West Winner</h3><p class="meta">NW Winner 2026 · UK Finalist 2026</p></div>
+        <p class="talk">Profile coming soon</p>
+        <dl>
+          <dt>The final</dt>
+          <dd>Won the North West Final at Lime Street Central, Liverpool, on 24 March 2026, and represented the region at the UK Final at Cheltenham Science Festival in June.</dd>
+        </dl>
+      </article>
+      <article class="person open">
+        <div class="avatar" aria-hidden="true">+</div>
+        <h3>Your story here</h3>
+        <p style="color:var(--muted)">Took part in a North West heat, final or training session? Add yourself to the alumni wall.</p>
+        <a class="btn primary" href="#join">Add your profile</a>
+      </article>
+    </div>
+
+    <div class="finals" aria-label="North West Finals">
+      <div><p class="y">2024</p><p>LEAF, Bold Street, Liverpool. First final of the Salford–Liverpool hub, sold out.</p></div>
+      <div><p class="y">2025</p><p>Science and Industry Museum, Manchester.</p></div>
+      <div><p class="y">2026</p><p>Lime Street Central, Liverpool. Compèred by Bethany Facer, with a guest talk from Erin Pallott.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="dates" aria-labelledby="dates-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Dates</p>
+      <h2 id="dates-h">The 2027 cycle</h2>
+      <p class="lede">Based on the pattern of previous years. We'll confirm each date here as soon as Cheltenham Festivals publishes it.</p>
+    </div>
+    <div class="dates">
+      <div class="date"><span class="d">Oct 2026</span><span><strong>Applications open</strong><br><span class="w">Apply through Cheltenham Festivals' FameLab UK page</span></span><span class="tag confirm">To confirm</span></div>
+      <div class="date"><span class="d">Mid Jan 2027</span><span><strong>Applications close</strong><br><span class="w">Deadline was 16 January in 2026</span></span><span class="tag confirm">To confirm</span></div>
+      <div class="date"><span class="d">Late Jan 2027</span><span><strong>Welcome to the FameLab family</strong><br><span class="w">Online welcome for all applicants</span></span><span class="tag confirm">To confirm</span></div>
+      <div class="date"><span class="d">Feb 2027</span><span><strong>North West hub training</strong><br><span class="w">Free, online, open to every North West applicant</span></span><span class="tag confirm">To confirm</span></div>
+      <div class="date"><span class="d">Mar 2027</span><span><strong>North West Final</strong><br><span class="w">Free tickets, open to everyone</span></span><span class="tag confirm">To confirm</span></div>
+      <div class="date"><span class="d">Early May 2027</span><span><strong>UK Masterclass, Cheltenham</strong><br><span class="w">For regional winners, fully funded</span></span><span class="tag confirm">To confirm</span></div>
+      <div class="date"><span class="d">June 2027</span><span><strong>FameLab UK Final</strong><br><span class="w">Cheltenham Science Festival</span></span><span class="tag confirm">To confirm</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="opportunities" aria-labelledby="opp-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Opportunities</p>
+      <h2 id="opp-h">Keep talking</h2>
+      <p class="lede">Three minutes is a beginning. These are places across the region where FameLab alumni can keep practising, on stage, on the page and on screen.</p>
+    </div>
+    <div class="filters" role="group" aria-label="Filter opportunities">
+      <button type="button" data-f="all" aria-pressed="true">All</button>
+      <button type="button" data-f="stage" aria-pressed="false">On stage</button>
+      <button type="button" data-f="writing" aria-pressed="false">Writing</button>
+      <button type="button" data-f="festival" aria-pressed="false">Festivals</button>
+    </div>
+    <div class="opps" id="opps">
+      <article class="opp" data-type="stage"><div class="top"><h3>Pint of Science</h3><span class="tag">On stage · May</span></div><p>Talks in pubs across Manchester, Liverpool and the Wirral each May. Speaker calls open in the winter.</p><a href="https://pintofscience.co.uk" target="_blank" rel="noopener">pintofscience.co.uk</a></article>
+      <article class="opp" data-type="stage"><div class="top"><h3>Meet the Scientists</h3><span class="tag">On stage · Liverpool</span></div><p>University of Liverpool's family science day at the World Museum. Researchers run stalls and short talks.</p><a href="https://www.liverpool.ac.uk/health-and-life-sciences/engage-with-us/public-engagement/" target="_blank" rel="noopener">Liverpool HLS public engagement</a></article>
+      <article class="opp" data-type="festival"><div class="top"><h3>Manchester Science Festival</h3><span class="tag">Festival · Autumn</span></div><p>The Science and Industry Museum's festival. Salford researchers take part every year.</p><a href="https://www.scienceandindustrymuseum.org.uk" target="_blank" rel="noopener">Science and Industry Museum</a></article>
+      <article class="opp" data-type="festival"><div class="top"><h3>Cheltenham Science Festival</h3><span class="tag">Festival · June</span></div><p>FameLab exists to find its next speakers. Alumni are well placed to pitch events and talks.</p><a href="https://www.cheltenhamfestivals.org" target="_blank" rel="noopener">cheltenhamfestivals.org</a></article>
+      <article class="opp" data-type="writing"><div class="top"><h3>Research Hive</h3><span class="tag">Writing · Video</span></div><p>Open blog for early-career researchers, led by 2025 winner Erin Pallott. Write accessible posts or short-form video about your work.</p><a href="https://blogs.manchester.ac.uk/bmh-sr/2026/01/29/ppie-award-winner-2025-erin-pallott/" target="_blank" rel="noopener">About Research Hive</a></article>
+      <article class="opp" data-type="stage"><div class="top"><h3>The SPACE at Salford</h3><span class="tag">On stage · Year round</span></div><p>TEDx University of Salford, Salford AI Club and public events run by the University of Salford's engagement team.</p><a href="https://scicomm.space" target="_blank" rel="noopener">scicomm.space</a></article>
+    </div>
+  </div>
+</section>
+
+<section id="join" aria-labelledby="join-h">
+  <div class="wrap join">
+    <div class="why">
+      <div class="sec-head" style="margin-bottom:0">
+        <p class="eyebrow">Join</p>
+        <h2 id="join-h">Be part of the North West community</h2>
+      </div>
+      <p class="lede">Whether you competed, trained with us or want to apply next year, tell us who you are. We'll use it to:</p>
+      <ul>
+        <li>add you to the alumni wall, if you'd like to be featured</li>
+        <li>send dates for training, finals and alumni meet-ups</li>
+        <li>share speaking, writing and festival opportunities</li>
+        <li>invite you to coach, judge or compère future finals</li>
+      </ul>
+      <blockquote>FameLab has given me the opportunity to be creative when explaining my research.<cite>Bethany Facer, North West, FameLab UK finalist 2024</cite></blockquote>
+    </div>
+
+    <div class="tally-wrap">
+      <iframe id="tally" src="https://tally.so/embed/BEEKMQ?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1" loading="lazy" width="100%" height="1250" frameborder="0" title="Join FameLab North West"></iframe>
+      <p class="tally-alt">Form not showing? <a href="https://tally.so/r/BEEKMQ" target="_blank" rel="noopener">Open the sign-up form</a>.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h3>FameLab North West Hub</h3>
+      <p>Run by the University of Salford and the University of Liverpool as the North West Regional Hub for FameLab UK.</p>
+      <p class="small">FameLab was created by Cheltenham Festivals in 2005. FameLab and its logo belong to Cheltenham Festivals and are used here by the regional hub.</p>
+    </div>
+    <div>
+      <h3>Find us</h3>
+      <address>The SPACE, University of Salford<br>G50 Peel Building, The Crescent<br>Salford M5 4WT</address>
+    </div>
+    <div>
+      <h3>Links</h3>
+      <p><a href="https://scicomm.space" target="_blank" rel="noopener">scicomm.space</a><br>
+      <a href="https://www.cheltenhamfestivals.org/our-projects/famelab/famelab-uk" target="_blank" rel="noopener">FameLab UK</a><br>
+      <a href="https://www.liverpool.ac.uk/health-and-life-sciences/engage-with-us/public-engagement/" target="_blank" rel="noopener">Liverpool public engagement</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* logo: show the FameLab logo if it loads, otherwise keep the text wordmark */
+(function(){
+  const img=document.getElementById('logo'), word=document.getElementById('wordmark');
+  img.addEventListener('load',()=>{ if(img.naturalWidth>0){ img.hidden=false; word.querySelector('small') && (word.firstChild.textContent=''); } });
+  img.addEventListener('error',()=>img.remove());
+})();
+
+/* rehearsal timer */
+(function(){
+  const TOTAL=180, t=document.getElementById('t'), bar=document.getElementById('bar'),
+        go=document.getElementById('go'), reset=document.getElementById('reset'), hint=document.getElementById('hint');
+  let left=TOTAL, id=null, last=0;
+  const fmt=s=>{const neg=s<0,a=Math.abs(Math.ceil(s));return (neg?'+':'')+Math.floor(a/60)+':'+String(a%60).padStart(2,'0')};
+  function draw(){
+    t.textContent=fmt(left);
+    bar.style.transform='scaleX('+Math.max(0,left/TOTAL)+')';
+    t.classList.toggle('warn',left<=30&&left>0);
+    t.classList.toggle('over',left<=0);
+    if(left<=0) hint.textContent='Time. The judges would stop you here.';
+    else if(left<=30) hint.textContent='Thirty seconds: start landing it.';
+  }
+  function tick(now){ left-= (now-last)/1000; last=now; draw(); if(id!==null) id=requestAnimationFrame(tick); }
+  go.addEventListener('click',()=>{
+    if(id===null){ last=performance.now(); id=requestAnimationFrame(tick); go.textContent='Pause'; if(left>30) hint.textContent='Go.'; }
+    else { cancelAnimationFrame(id); id=null; go.textContent='Resume'; hint.textContent='Paused.'; }
+  });
+  reset.addEventListener('click',()=>{ if(id!==null){cancelAnimationFrame(id); id=null;} left=TOTAL; go.textContent='Start'; hint.textContent='Press start and deliver your talk out loud.'; draw(); });
+  draw();
+})();
+
+/* opportunity filters */
+(function(){
+  const btns=[...document.querySelectorAll('.filters button')], items=[...document.querySelectorAll('#opps .opp')];
+  btns.forEach(b=>b.addEventListener('click',()=>{
+    btns.forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
+    items.forEach(i=>{ i.hidden = b.dataset.f!=='all' && i.dataset.type!==b.dataset.f; });
+  }));
+})();
+
+</script>
+<script async src="https://tally.so/widgets/embed.js"></script>
+</body>
+</html>
