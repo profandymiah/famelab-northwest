@@ -99,6 +99,10 @@ nav.bar a.nav-apply{color:var(--spot);opacity:1;font-weight:600}
 .photo figcaption,.hero-photo figcaption{font-size:.82rem;color:var(--muted)}
 .hero-photo figcaption{color:#c3c8dc}
 .photo figcaption span,.hero-photo figcaption span{display:block;font-size:.76rem;opacity:.85}
+.banner{display:block;text-decoration:none;color:inherit;background:#141a33}
+.banner img{display:block;width:100%;height:auto;max-width:none}
+.banner .word{display:block;font-family:var(--f-display);font-weight:800;font-size:clamp(3.4rem,13vw,9rem);letter-spacing:-.02em;line-height:1;padding-block:28px}
+.banner .word small{display:block;font-family:var(--f-mono);font-weight:500;font-size:.85rem;letter-spacing:.16em;text-transform:uppercase;color:var(--spot);margin-top:12px}
 /* full-bleed hero */
 .hero{min-height:clamp(560px,50vw,760px);display:flex;align-items:center}
 .hero::after{content:none}
@@ -296,13 +300,10 @@ footer address{font-style:normal}
   <div class="wrap"><span><b>FameLab 2027 is open to North West researchers.</b> Video entries 29 January – 19 February.</span><a href="#apply">How to apply &rarr;</a></div>
 </div>
 <header class="masthead">
-  <div class="wrap mast-top">
-    <a class="brand" href="#top" aria-label="FameLab North West home">
-      <img id="logo" alt="FameLab" src="https://images.squarespace-cdn.com/content/v1/583218b459cc687f522b226b/5aed5bc8-1b85-4148-9248-b87df6edaaae/FameLab+primary+logo+white.ai.jpg?format=1000w" hidden>
-      <span class="word" id="wordmark">FameLab</span>
-    </a>
-    <p class="hub-name">North West<br>Regional Hub</p>
-  </div>
+  <a class="banner" href="#top" aria-label="FameLab North West home">
+    <img id="logo" alt="FameLab Talking Science, North West Training Hub, University of Liverpool and University of Salford" src="https://images.squarespace-cdn.com/content/v1/583218b459cc687f522b226b/5aed5bc8-1b85-4148-9248-b87df6edaaae/FameLab+primary+logo+white.ai.jpg?format=2500w" hidden>
+    <span class="wrap word" id="wordmark">FameLab <small>North West Regional Hub</small></span>
+  </a>
   <div class="unis-band">
     <div class="wrap"><p class="hub-unis"><span>University of Salford</span><span class="x" aria-hidden="true">&times;</span><span>University of Liverpool</span></p></div>
   </div>
