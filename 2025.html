@@ -93,6 +93,7 @@ nav.bar a.nav-apply{color:var(--spot);opacity:1;font-weight:600}
 .photo{margin:0;display:grid;gap:8px;min-width:0}
 .photo img{width:100%;height:auto;display:block;border-radius:var(--r);object-fit:cover}
 .photo.wide{margin-bottom:28px}
+.person .yt{display:grid;gap:6px;margin-top:4px}
 .photo.wide img{aspect-ratio:21/9;object-position:center 35%}
 .photo.trophy img{aspect-ratio:4/3;object-position:center 45%}
 .photo figcaption,.hero-photo figcaption{font-size:.82rem;color:var(--muted)}
@@ -130,6 +131,15 @@ nav.bar a.nav-li{display:inline-flex;align-items:center;gap:6px;margin-left:auto
 .nwf .tk{font-family:var(--f-display);font-weight:600;color:var(--accent);font-size:.95rem;line-height:1.35}
 .nwf .nt{font-size:.8rem;color:var(--muted);font-style:italic}
 .nwf .badge{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;background:var(--spot);color:#141a33;padding:2px 8px;border-radius:999px}
+.nwf .yt{grid-column:1/-1;margin-top:10px;display:grid;gap:6px}
+.yt-play{position:relative;display:block;width:100%;padding:0;border:0;border-radius:8px;overflow:hidden;cursor:pointer;background:#000;aspect-ratio:16/9}
+.yt-play img{width:100%;height:100%;object-fit:cover;display:block;opacity:.9;transition:opacity .2s}
+.yt-play:hover img,.yt-play:focus-visible img{opacity:1}
+.yt-play .yt-icon{position:absolute;left:50%;top:50%;width:58px;height:40px;margin:-20px 0 0 -29px;border-radius:10px;background:#e62117}
+.yt-play .yt-icon::after{content:"";position:absolute;left:23px;top:12px;border-style:solid;border-width:8px 0 8px 14px;border-color:transparent transparent transparent #fff}
+.yt iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:8px;display:block}
+.yt-cap{font-size:.8rem;color:var(--muted)}
+.nwf-hl{max-width:720px;margin:0 0 18px}
 @media (max-width:900px){.nwf-grid{grid-template-columns:1fr 1fr}}
 @media (max-width:620px){.nwf-grid{grid-template-columns:1fr}}
 /*/NWF*/
@@ -390,6 +400,15 @@ nav.bar a[aria-current="page"]{opacity:1;color:var(--spot)}
 .nwf .tk{font-family:var(--f-display);font-weight:600;color:var(--accent);font-size:.95rem;line-height:1.35}
 .nwf .nt{font-size:.8rem;color:var(--muted);font-style:italic}
 .nwf .badge{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;background:var(--spot);color:#141a33;padding:2px 8px;border-radius:999px}
+.nwf .yt{grid-column:1/-1;margin-top:10px;display:grid;gap:6px}
+.yt-play{position:relative;display:block;width:100%;padding:0;border:0;border-radius:8px;overflow:hidden;cursor:pointer;background:#000;aspect-ratio:16/9}
+.yt-play img{width:100%;height:100%;object-fit:cover;display:block;opacity:.9;transition:opacity .2s}
+.yt-play:hover img,.yt-play:focus-visible img{opacity:1}
+.yt-play .yt-icon{position:absolute;left:50%;top:50%;width:58px;height:40px;margin:-20px 0 0 -29px;border-radius:10px;background:#e62117}
+.yt-play .yt-icon::after{content:"";position:absolute;left:23px;top:12px;border-style:solid;border-width:8px 0 8px 14px;border-color:transparent transparent transparent #fff}
+.yt iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:8px;display:block}
+.yt-cap{font-size:.8rem;color:var(--muted)}
+.nwf-hl{max-width:720px;margin:0 0 18px}
 @media (max-width:900px){.nwf-grid{grid-template-columns:1fr 1fr}}
 @media (max-width:620px){.nwf-grid{grid-template-columns:1fr}}
 </style>
@@ -486,7 +505,7 @@ nav.bar a[aria-current="page"]{opacity:1;color:var(--spot)}
 </div></section>
 <section aria-labelledby="nwf-h"><div class="wrap"><div class="sec-head"><p class="eyebrow">North West Final 2025</p>
 <h2 id="nwf-h">The North West finalists</h2><p class="lede">Everyone who took the stage at the 2025 North West Final at Science and Industry Museum, Manchester.</p></div>
-<div class="nwf-year" data-year="2025"><div class="nwf-yh"><h3>2025</h3><span>10 finalists</span></div><div class="nwf-grid"><article class="nwf win"><span class="av" aria-hidden="true">EP</span><h4>Erin Pallott <span class="badge">NW winner</span></h4><p class="ro">PhD researcher · University of Manchester</p><p class="tk">&ldquo;Snot Just Slime!&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">CM</span><h4>Chris Myerscough</h4><p class="ro">Laboratory Manager · Liverpool School of Tropical Medicine</p><p class="tk">&ldquo;Pneumococcus: long studied, often unnoticed, yet still important!&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">LC</span><h4>Lois Clark</h4><p class="ro">Undergraduate, Wildlife Conservation with Zoo Biology · University of Salford</p><p class="tk">&ldquo;Why are animal bums so weird?&rdquo;</p><p class="nt">Back again in 2026</p></article><article class="nwf"><span class="av" aria-hidden="true">MA</span><h4>Melissa Azombi</h4><p class="ro">PhD researcher, Astronomy and Astrophysics · University of Manchester</p><p class="tk">&ldquo;Your Stellar Journey&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">SS</span><h4>Silas Yenbon Sebire</h4><p class="ro">PhD candidate · Edge Hill University</p><p class="tk">&ldquo;Bridging the gap: developing nurse managers in evidence-based practice&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">HO</span><h4>Holly O&#x27;Dea</h4><p class="ro">Principal Clinical Scientist in Genetics · NHS</p><p class="tk">&ldquo;The genetic test that could save your life&rdquo;</p><p class="nt">Known online as The Scouse Scientist</p></article><article class="nwf"><span class="av" aria-hidden="true">MJ</span><h4>Megan Jones</h4><p class="ro">PhD researcher · University of Manchester</p><p class="tk">&ldquo;Dinosaurs: now in colour&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">KS</span><h4>Kirsty Styles</h4><p class="ro">Journalism lecturer · University of Huddersfield</p><p class="tk">&ldquo;Why we&#x27;re still trashing the planet, and what it might take for us to stop&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">LB</span><h4>Laura Bih</h4><p class="ro">MSc student, Biotechnology · University of Salford</p><p class="tk">&ldquo;Making vaccines edible!&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">LM</span><h4>Lonnie MacDonald</h4><p class="ro">PhD researcher · University of Liverpool</p><p class="tk">&ldquo;T-cells: a patient&#x27;s friend and foe&rdquo;</p></article></div></div></div></section>
+<div class="nwf-year" data-year="2025"><div class="nwf-yh"><h3>2025</h3><span>10 finalists</span></div><div class="nwf-grid"><article class="nwf win"><span class="av" aria-hidden="true">EP</span><h4>Erin Pallott <span class="badge">NW winner</span></h4><p class="ro">PhD researcher · University of Manchester</p><p class="tk">&ldquo;Snot Just Slime!&rdquo;</p><p class="nt">UK finalist 2025</p><div class="yt"><button type="button" class="yt-play" data-id="a9oh24GTLDM" aria-label="Play video: Her talk at the FameLab UK Final 2025"><img src="https://i.ytimg.com/vi/a9oh24GTLDM/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="yt-icon" aria-hidden="true"></span></button><p class="yt-cap">Her talk at the FameLab UK Final 2025 · <a href="https://www.youtube.com/watch?v=a9oh24GTLDM" target="_blank" rel="noopener">Watch on YouTube</a></p></div></article><article class="nwf"><span class="av" aria-hidden="true">CM</span><h4>Chris Myerscough</h4><p class="ro">Laboratory Manager · Liverpool School of Tropical Medicine</p><p class="tk">&ldquo;Pneumococcus: long studied, often unnoticed, yet still important!&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">LC</span><h4>Lois Clark</h4><p class="ro">Undergraduate, Wildlife Conservation with Zoo Biology · University of Salford</p><p class="tk">&ldquo;Why are animal bums so weird?&rdquo;</p><p class="nt">Back again in 2026</p></article><article class="nwf"><span class="av" aria-hidden="true">MA</span><h4>Melissa Azombi</h4><p class="ro">PhD researcher, Astronomy and Astrophysics · University of Manchester</p><p class="tk">&ldquo;Your Stellar Journey&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">SS</span><h4>Silas Yenbon Sebire</h4><p class="ro">PhD candidate · Edge Hill University</p><p class="tk">&ldquo;Bridging the gap: developing nurse managers in evidence-based practice&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">HO</span><h4>Holly O&#x27;Dea</h4><p class="ro">Principal Clinical Scientist in Genetics · NHS</p><p class="tk">&ldquo;The genetic test that could save your life&rdquo;</p><p class="nt">Known online as The Scouse Scientist</p><div class="yt"><button type="button" class="yt-play" data-id="ml4sJBeY-Sk" aria-label="Play video: TEDxTeesside: Genetics and the future of the NHS"><img src="https://i.ytimg.com/vi/ml4sJBeY-Sk/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="yt-icon" aria-hidden="true"></span></button><p class="yt-cap">TEDxTeesside: Genetics and the future of the NHS · <a href="https://www.youtube.com/watch?v=ml4sJBeY-Sk" target="_blank" rel="noopener">Watch on YouTube</a></p></div></article><article class="nwf"><span class="av" aria-hidden="true">MJ</span><h4>Megan Jones</h4><p class="ro">PhD researcher · University of Manchester</p><p class="tk">&ldquo;Dinosaurs: now in colour&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">KS</span><h4>Kirsty Styles</h4><p class="ro">Journalism lecturer · University of Huddersfield</p><p class="tk">&ldquo;Why we&#x27;re still trashing the planet, and what it might take for us to stop&rdquo;</p><div class="yt"><button type="button" class="yt-play" data-id="xiJs41R4BRU" aria-label="Play video: Can stand-up comedy help journalism rebuild trust? Hacks/Hackers London"><img src="https://i.ytimg.com/vi/xiJs41R4BRU/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="yt-icon" aria-hidden="true"></span></button><p class="yt-cap">Can stand-up comedy help journalism rebuild trust? Hacks/Hackers London · <a href="https://www.youtube.com/watch?v=xiJs41R4BRU" target="_blank" rel="noopener">Watch on YouTube</a></p></div></article><article class="nwf"><span class="av" aria-hidden="true">LB</span><h4>Laura Bih</h4><p class="ro">MSc student, Biotechnology · University of Salford</p><p class="tk">&ldquo;Making vaccines edible!&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">LM</span><h4>Lonnie MacDonald</h4><p class="ro">PhD researcher · University of Liverpool</p><p class="tk">&ldquo;T-cells: a patient&#x27;s friend and foe&rdquo;</p></article></div></div></div></section>
 
 <section><div class="wrap ynav">
 <a class="btn" style="border-color:var(--line);color:var(--ink)" href="2024.html">&larr; 2024</a>
@@ -522,6 +541,15 @@ nav.bar a[aria-current="page"]{opacity:1;color:var(--spot)}
   if(img.complete) ok(); else img.addEventListener('load',ok);
   img.addEventListener('error',()=>img.remove());
 })();
+/*YTJS*/
+document.addEventListener('click',function(ev){
+  var b=ev.target.closest('.yt-play'); if(!b) return;
+  var id=b.getAttribute('data-id'); var f=document.createElement('iframe');
+  f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0';
+  f.title=b.getAttribute('aria-label'); f.allow='autoplay; encrypted-media; picture-in-picture'; f.allowFullscreen=true;
+  b.replaceWith(f);
+});
+/*/YTJS*/
 </script>
 </body>
 </html>

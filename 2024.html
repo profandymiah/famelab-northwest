@@ -93,6 +93,7 @@ nav.bar a.nav-apply{color:var(--spot);opacity:1;font-weight:600}
 .photo{margin:0;display:grid;gap:8px;min-width:0}
 .photo img{width:100%;height:auto;display:block;border-radius:var(--r);object-fit:cover}
 .photo.wide{margin-bottom:28px}
+.person .yt{display:grid;gap:6px;margin-top:4px}
 .photo.wide img{aspect-ratio:21/9;object-position:center 35%}
 .photo.trophy img{aspect-ratio:4/3;object-position:center 45%}
 .photo figcaption,.hero-photo figcaption{font-size:.82rem;color:var(--muted)}
@@ -130,6 +131,15 @@ nav.bar a.nav-li{display:inline-flex;align-items:center;gap:6px;margin-left:auto
 .nwf .tk{font-family:var(--f-display);font-weight:600;color:var(--accent);font-size:.95rem;line-height:1.35}
 .nwf .nt{font-size:.8rem;color:var(--muted);font-style:italic}
 .nwf .badge{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;background:var(--spot);color:#141a33;padding:2px 8px;border-radius:999px}
+.nwf .yt{grid-column:1/-1;margin-top:10px;display:grid;gap:6px}
+.yt-play{position:relative;display:block;width:100%;padding:0;border:0;border-radius:8px;overflow:hidden;cursor:pointer;background:#000;aspect-ratio:16/9}
+.yt-play img{width:100%;height:100%;object-fit:cover;display:block;opacity:.9;transition:opacity .2s}
+.yt-play:hover img,.yt-play:focus-visible img{opacity:1}
+.yt-play .yt-icon{position:absolute;left:50%;top:50%;width:58px;height:40px;margin:-20px 0 0 -29px;border-radius:10px;background:#e62117}
+.yt-play .yt-icon::after{content:"";position:absolute;left:23px;top:12px;border-style:solid;border-width:8px 0 8px 14px;border-color:transparent transparent transparent #fff}
+.yt iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:8px;display:block}
+.yt-cap{font-size:.8rem;color:var(--muted)}
+.nwf-hl{max-width:720px;margin:0 0 18px}
 @media (max-width:900px){.nwf-grid{grid-template-columns:1fr 1fr}}
 @media (max-width:620px){.nwf-grid{grid-template-columns:1fr}}
 /*/NWF*/
@@ -390,6 +400,15 @@ nav.bar a[aria-current="page"]{opacity:1;color:var(--spot)}
 .nwf .tk{font-family:var(--f-display);font-weight:600;color:var(--accent);font-size:.95rem;line-height:1.35}
 .nwf .nt{font-size:.8rem;color:var(--muted);font-style:italic}
 .nwf .badge{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;background:var(--spot);color:#141a33;padding:2px 8px;border-radius:999px}
+.nwf .yt{grid-column:1/-1;margin-top:10px;display:grid;gap:6px}
+.yt-play{position:relative;display:block;width:100%;padding:0;border:0;border-radius:8px;overflow:hidden;cursor:pointer;background:#000;aspect-ratio:16/9}
+.yt-play img{width:100%;height:100%;object-fit:cover;display:block;opacity:.9;transition:opacity .2s}
+.yt-play:hover img,.yt-play:focus-visible img{opacity:1}
+.yt-play .yt-icon{position:absolute;left:50%;top:50%;width:58px;height:40px;margin:-20px 0 0 -29px;border-radius:10px;background:#e62117}
+.yt-play .yt-icon::after{content:"";position:absolute;left:23px;top:12px;border-style:solid;border-width:8px 0 8px 14px;border-color:transparent transparent transparent #fff}
+.yt iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:8px;display:block}
+.yt-cap{font-size:.8rem;color:var(--muted)}
+.nwf-hl{max-width:720px;margin:0 0 18px}
 @media (max-width:900px){.nwf-grid{grid-template-columns:1fr 1fr}}
 @media (max-width:620px){.nwf-grid{grid-template-columns:1fr}}
 </style>
@@ -478,7 +497,7 @@ nav.bar a[aria-current="page"]{opacity:1;color:var(--spot)}
 </div></section>
 <section aria-labelledby="nwf-h"><div class="wrap"><div class="sec-head"><p class="eyebrow">North West Final 2024</p>
 <h2 id="nwf-h">The North West finalists</h2><p class="lede">Everyone who took the stage at the 2024 North West Final at LEAF, Bold Street, Liverpool.</p></div>
-<div class="nwf-year" data-year="2024"><div class="nwf-yh"><h3>2024</h3><span>7 finalists</span></div><div class="nwf-grid"><article class="nwf win"><span class="av" aria-hidden="true">BF</span><h4>Bethany Facer <a href="https://www.linkedin.com/in/bethany-facer/" target="_blank" rel="noopener" aria-label="Bethany Facer on LinkedIn"><svg class="li-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a> <span class="badge">NW winner</span></h4><p class="ro">PhD researcher · University of Liverpool</p><p class="tk">&ldquo;To Move Again: A Parkinson&#x27;s Tale&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">IP</span><h4>Isabel Pazminomayorga</h4><p class="ro">Postdoctoral researcher · University of Manchester</p><p class="tk">&ldquo;Super Looping: the climate avenger&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">ML</span><h4>Matthew Lee</h4><p class="ro">Doctor</p><p class="tk">&ldquo;One Life, One Planet, One Health&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">IA</span><h4>Ieva Andrulytė <a href="https://www.linkedin.com/in/ieva-andrulyte/" target="_blank" rel="noopener" aria-label="Ieva Andrulytė on LinkedIn"><svg class="li-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a></h4><p class="ro">PhD researcher · University of Liverpool</p><p class="tk">&ldquo;From frogs to princes: exploring brain connectivity&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">CW</span><h4>Christida Wastika</h4><p class="ro">Postdoctoral researcher · Liverpool School of Tropical Medicine</p><p class="tk">&ldquo;Mozzie the postman: can I deliver your virus?&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">VT</span><h4>Venera Tyukmaeva</h4><p class="ro">Lecturer · University of Liverpool</p><p class="tk">&ldquo;Sleepless&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">RR</span><h4>Rachel Ridgway</h4><p class="ro">PhD researcher · University of Liverpool</p><p class="tk">&ldquo;Me and Daisy: a coming of phage story&rdquo;</p></article></div></div></div></section>
+<div class="nwf-year" data-year="2024"><div class="nwf-yh"><h3>2024</h3><span>7 finalists</span></div><div class="nwf-grid"><article class="nwf win"><span class="av" aria-hidden="true">BF</span><h4>Bethany Facer <a href="https://www.linkedin.com/in/bethany-facer/" target="_blank" rel="noopener" aria-label="Bethany Facer on LinkedIn"><svg class="li-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a> <span class="badge">NW winner</span></h4><p class="ro">PhD researcher · University of Liverpool</p><p class="tk">&ldquo;To Move Again: A Parkinson&#x27;s Tale&rdquo;</p><p class="nt">UK finalist 2024</p><div class="yt"><button type="button" class="yt-play" data-id="ru5KWqQ8Jn0" aria-label="Play video: Her talk at the FameLab UK Final 2024: Back to the Future of Parkinson&#x27;s disease"><img src="https://i.ytimg.com/vi/ru5KWqQ8Jn0/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="yt-icon" aria-hidden="true"></span></button><p class="yt-cap">Her talk at the FameLab UK Final 2024: Back to the Future of Parkinson&#x27;s disease · <a href="https://www.youtube.com/watch?v=ru5KWqQ8Jn0" target="_blank" rel="noopener">Watch on YouTube</a></p></div></article><article class="nwf"><span class="av" aria-hidden="true">IM</span><h4>Isabel Pazmiño Mayorga</h4><p class="ro">Postdoctoral researcher · University of Manchester</p><p class="tk">&ldquo;Super Looping: the climate avenger&rdquo;</p><div class="yt"><button type="button" class="yt-play" data-id="MD9FN_EBuBs" aria-label="Play video: Chemical looping, the climate avenger: STEM Learning"><img src="https://i.ytimg.com/vi/MD9FN_EBuBs/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="yt-icon" aria-hidden="true"></span></button><p class="yt-cap">Chemical looping, the climate avenger: STEM Learning · <a href="https://www.youtube.com/watch?v=MD9FN_EBuBs" target="_blank" rel="noopener">Watch on YouTube</a></p></div></article><article class="nwf"><span class="av" aria-hidden="true">ML</span><h4>Matthew Lee</h4><p class="ro">Doctor</p><p class="tk">&ldquo;One Life, One Planet, One Health&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">IA</span><h4>Ieva Andrulytė <a href="https://www.linkedin.com/in/ieva-andrulyte/" target="_blank" rel="noopener" aria-label="Ieva Andrulytė on LinkedIn"><svg class="li-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a></h4><p class="ro">PhD researcher · University of Liverpool</p><p class="tk">&ldquo;From frogs to princes: exploring brain connectivity&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">CW</span><h4>Christida Wastika</h4><p class="ro">Postdoctoral researcher · Liverpool School of Tropical Medicine</p><p class="tk">&ldquo;Mozzie the postman: can I deliver your virus?&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">VT</span><h4>Venera Tyukmaeva</h4><p class="ro">Lecturer · University of Liverpool</p><p class="tk">&ldquo;Sleepless&rdquo;</p><div class="yt"><button type="button" class="yt-play" data-id="xnMzCcwOPV8" aria-label="Play video: On the evolution of host-parasite interactions: NEOF"><img src="https://i.ytimg.com/vi/xnMzCcwOPV8/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="yt-icon" aria-hidden="true"></span></button><p class="yt-cap">On the evolution of host-parasite interactions: NEOF · <a href="https://www.youtube.com/watch?v=xnMzCcwOPV8" target="_blank" rel="noopener">Watch on YouTube</a></p></div></article><article class="nwf"><span class="av" aria-hidden="true">RR</span><h4>Rachel Ridgway</h4><p class="ro">PhD researcher · University of Liverpool</p><p class="tk">&ldquo;Me and Daisy: a coming of phage story&rdquo;</p></article></div></div></div></section>
 
 <section><div class="wrap ynav">
 <span></span>
@@ -514,6 +533,15 @@ nav.bar a[aria-current="page"]{opacity:1;color:var(--spot)}
   if(img.complete) ok(); else img.addEventListener('load',ok);
   img.addEventListener('error',()=>img.remove());
 })();
+/*YTJS*/
+document.addEventListener('click',function(ev){
+  var b=ev.target.closest('.yt-play'); if(!b) return;
+  var id=b.getAttribute('data-id'); var f=document.createElement('iframe');
+  f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0';
+  f.title=b.getAttribute('aria-label'); f.allow='autoplay; encrypted-media; picture-in-picture'; f.allowFullscreen=true;
+  b.replaceWith(f);
+});
+/*/YTJS*/
 </script>
 </body>
 </html>

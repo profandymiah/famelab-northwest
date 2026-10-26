@@ -93,6 +93,7 @@ nav.bar a.nav-apply{color:var(--spot);opacity:1;font-weight:600}
 .photo{margin:0;display:grid;gap:8px;min-width:0}
 .photo img{width:100%;height:auto;display:block;border-radius:var(--r);object-fit:cover}
 .photo.wide{margin-bottom:28px}
+.person .yt{display:grid;gap:6px;margin-top:4px}
 .photo.wide img{aspect-ratio:21/9;object-position:center 35%}
 .photo.trophy img{aspect-ratio:4/3;object-position:center 45%}
 .photo figcaption,.hero-photo figcaption{font-size:.82rem;color:var(--muted)}
@@ -130,6 +131,15 @@ nav.bar a.nav-li{display:inline-flex;align-items:center;gap:6px;margin-left:auto
 .nwf .tk{font-family:var(--f-display);font-weight:600;color:var(--accent);font-size:.95rem;line-height:1.35}
 .nwf .nt{font-size:.8rem;color:var(--muted);font-style:italic}
 .nwf .badge{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;background:var(--spot);color:#141a33;padding:2px 8px;border-radius:999px}
+.nwf .yt{grid-column:1/-1;margin-top:10px;display:grid;gap:6px}
+.yt-play{position:relative;display:block;width:100%;padding:0;border:0;border-radius:8px;overflow:hidden;cursor:pointer;background:#000;aspect-ratio:16/9}
+.yt-play img{width:100%;height:100%;object-fit:cover;display:block;opacity:.9;transition:opacity .2s}
+.yt-play:hover img,.yt-play:focus-visible img{opacity:1}
+.yt-play .yt-icon{position:absolute;left:50%;top:50%;width:58px;height:40px;margin:-20px 0 0 -29px;border-radius:10px;background:#e62117}
+.yt-play .yt-icon::after{content:"";position:absolute;left:23px;top:12px;border-style:solid;border-width:8px 0 8px 14px;border-color:transparent transparent transparent #fff}
+.yt iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:8px;display:block}
+.yt-cap{font-size:.8rem;color:var(--muted)}
+.nwf-hl{max-width:720px;margin:0 0 18px}
 @media (max-width:900px){.nwf-grid{grid-template-columns:1fr 1fr}}
 @media (max-width:620px){.nwf-grid{grid-template-columns:1fr}}
 /*/NWF*/
@@ -390,6 +400,15 @@ nav.bar a[aria-current="page"]{opacity:1;color:var(--spot)}
 .nwf .tk{font-family:var(--f-display);font-weight:600;color:var(--accent);font-size:.95rem;line-height:1.35}
 .nwf .nt{font-size:.8rem;color:var(--muted);font-style:italic}
 .nwf .badge{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;background:var(--spot);color:#141a33;padding:2px 8px;border-radius:999px}
+.nwf .yt{grid-column:1/-1;margin-top:10px;display:grid;gap:6px}
+.yt-play{position:relative;display:block;width:100%;padding:0;border:0;border-radius:8px;overflow:hidden;cursor:pointer;background:#000;aspect-ratio:16/9}
+.yt-play img{width:100%;height:100%;object-fit:cover;display:block;opacity:.9;transition:opacity .2s}
+.yt-play:hover img,.yt-play:focus-visible img{opacity:1}
+.yt-play .yt-icon{position:absolute;left:50%;top:50%;width:58px;height:40px;margin:-20px 0 0 -29px;border-radius:10px;background:#e62117}
+.yt-play .yt-icon::after{content:"";position:absolute;left:23px;top:12px;border-style:solid;border-width:8px 0 8px 14px;border-color:transparent transparent transparent #fff}
+.yt iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:8px;display:block}
+.yt-cap{font-size:.8rem;color:var(--muted)}
+.nwf-hl{max-width:720px;margin:0 0 18px}
 @media (max-width:900px){.nwf-grid{grid-template-columns:1fr 1fr}}
 @media (max-width:620px){.nwf-grid{grid-template-columns:1fr}}
 </style>
@@ -433,9 +452,9 @@ nav.bar a[aria-current="page"]{opacity:1;color:var(--spot)}
 <a href="https://www.cardiff.ac.uk/news/view/3069310-from-stone-mason-to-science-communication-phd-student-wins-uk-science-competition-with-artemis-inspired-poem" target="_blank" rel="noopener" style="font-size:.9rem">Source</a></div>
 <dl class="facts-list"><div><dt>Date & venue</dt><dd>5 Jun 2026, Helix, Cheltenham Science Festival</dd></div><div><dt>Region</dt><dd>Wales</dd></div><div><dt>Finalists</dt><dd>10</dd></div><div><dt>What's next</dt><dd>International Final at Silesian Science Festival, Poland, 5 Dec 2026</dd></div></dl>
 </div>
-<div class="nw"><div class="avatar" aria-hidden="true">NW</div><div>
-<p class="lbl">North West representative</p><h3>North West winner 2026</h3>
-<p>The 2026 North West Final took place at Lime Street Central, Liverpool, on 24 March 2026. Winner's profile coming soon.</p></div></div>
+<div class="nw"><div class="avatar" aria-hidden="true">CB</div><div>
+<p class="lbl">North West representative · Finalist</p><h3>Cherene de Bruyn (Liverpool John Moores University)</h3>
+<p>Forensic science: drones and hidden graves · "Eye in the Sky"</p><p>Hub: Univ of Liverpool &amp; Univ of Salford</p></div></div>
 <figure class="photo wide" style="margin-top:36px"><img src="assets/photos/finalists-group.jpg" width="1600" height="1066" loading="lazy" alt="The FameLab UK 2026 finalists and organisers gathered on stage under the FameLab Talking Science screen"><figcaption>Finalists and organisers at the FameLab UK Final 2026. <span>Photo: Still Moving Media for Cheltenham Festivals</span></figcaption></figure>
 </div></section>
 
@@ -446,8 +465,11 @@ nav.bar a[aria-current="page"]{opacity:1;color:var(--spot)}
 <p class="inst">Cardiff University</p><p class="field">Cometary physics</p>
 <p class="t">Artemis-inspired poem</p><span class="tag win res">UK Winner</span>
 
-<a class="src" href="https://www.cardiff.ac.uk/news/view/3069310-from-stone-mason-to-science-communication-phd-student-wins-uk-science-competition-with-artemis-inspired-poem" target="_blank" rel="noopener">Source</a></article><article class="reg tbc is-nw"><p class="region">North West</p>
-<h3>Winner to be confirmed</h3><p class="inst">Hub: Univ of Liverpool &amp; Univ of Salford</p><p class="note">Not yet announced publicly.</p></article><article class="reg tbc"><p class="region">East Midlands</p>
+<a class="src" href="https://www.cardiff.ac.uk/news/view/3069310-from-stone-mason-to-science-communication-phd-student-wins-uk-science-competition-with-artemis-inspired-poem" target="_blank" rel="noopener">Source</a></article><article class="reg is-nw"><p class="region">North West</p><h3>Cherene de Bruyn</h3>
+<p class="inst">Liverpool John Moores University</p><p class="field">Forensic science: drones and hidden graves</p>
+<p class="t">Eye in the Sky</p><span class="tag res">Finalist</span>
+
+<a class="src" href="https://www.youtube.com/watch?v=XMyLy72ZaX8" target="_blank" rel="noopener">Source</a></article><article class="reg tbc"><p class="region">East Midlands</p>
 <h3>Winner to be confirmed</h3><p class="note">Not yet announced publicly.</p></article><article class="reg tbc"><p class="region">East of England</p>
 <h3>Winner to be confirmed</h3><p class="inst">Hub: University of Cambridge</p><p class="note">Not yet announced publicly.</p></article><article class="reg tbc"><p class="region">Gloucestershire &amp; West Midlands</p>
 <h3>Winner to be confirmed</h3><p class="note">Not yet announced publicly.</p></article><article class="reg"><p class="region">London</p><h3>Fabia Hannan Mone</h3>
@@ -461,11 +483,11 @@ nav.bar a[aria-current="page"]{opacity:1;color:var(--spot)}
 
 <a class="src" href="https://www.youtube.com/watch?v=hGD6i-8YtSM" target="_blank" rel="noopener">Source</a></article><article class="reg tbc"><p class="region">Scotland</p>
 <h3>Winner to be confirmed</h3><p class="inst">Hub: Edinburgh Science</p><p class="note">Not yet announced publicly.</p></article><article class="reg tbc"><p class="region">South East / South West</p>
-<h3>Winner to be confirmed</h3><p class="note">Not yet announced publicly.</p></article></div><p class="missing">7 of 10 regional winners for 2026 have not been announced publicly. Know who won? <a href="index.html#join">Tell us</a> and we’ll add them.</p>
+<h3>Winner to be confirmed</h3><p class="note">Not yet announced publicly.</p></article></div><p class="missing">6 of 10 regional winners for 2026 have not been announced publicly. Know who won? <a href="index.html#join">Tell us</a> and we’ll add them.</p>
 </div></section>
 <section aria-labelledby="nwf-h"><div class="wrap"><div class="sec-head"><p class="eyebrow">North West Final 2026</p>
 <h2 id="nwf-h">The North West finalists</h2><p class="lede">Everyone who took the stage at the 2026 North West Final at Lime Street Central, Liverpool.</p></div>
-<div class="nwf-year" data-year="2026"><div class="nwf-yh"><h3>2026</h3><span>11 finalists</span></div><div class="nwf-grid"><article class="nwf"><span class="av" aria-hidden="true">AT</span><h4>Arnas Tamasauskas</h4><p class="ro">PhD researcher · University of Liverpool</p><p class="tk">&ldquo;Born This Way: The Fibromyalgia Experience&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">CB</span><h4>Cherene De Bruyn</h4><p class="ro">PhD researcher · Liverpool John Moores University</p><p class="tk">&ldquo;Eye in the Sky: Drones on the trail of the missing&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">KD</span><h4>Kay Dewhurst</h4><p class="ro">Technician · University of Manchester</p><p class="tk">&ldquo;Particle Accelerators All Around You&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">OK</span><h4>Olga Tereszkowska-Kaminska</h4><p class="ro">PhD researcher · University of Liverpool</p><p class="tk">&ldquo;Bang goes the cancer cell&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">SC</span><h4>Skye Crawford</h4><p class="ro">PhD researcher · Liverpool John Moores University</p><p class="tk">&ldquo;The Invasive Species You&#x27;re Carrying&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">DK</span><h4>Deepanshi Karwall</h4><p class="ro">PhD researcher · University of Manchester</p><p class="tk">&ldquo;99.99%&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">DI</span><h4>Dimitri Iarovoi</h4><p class="ro">PhD researcher · Wrexham University</p><p class="tk">&ldquo;How Welsh castles help us build a fair ChatGPT&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">OE</span><h4>Owen Eaton</h4><p class="ro">Bangor University</p><p class="tk">&ldquo;Of Butterflies and Bison&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">LC</span><h4>Lois Clark</h4><p class="ro">Undergraduate · University of Salford</p><p class="tk">&ldquo;The power of a sponge&rdquo;</p><p class="nt">Also a 2025 finalist</p></article><article class="nwf"><span class="av" aria-hidden="true">LB</span><h4>Lucia Galvez-Bravo</h4><p class="ro">Senior Lecturer · Liverpool John Moores University</p><p class="tk">&ldquo;Bob the beaver&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">GM</span><h4>Gavin McStay</h4><p class="ro">Senior Lecturer · Liverpool John Moores University</p><p class="tk">&ldquo;Mitochondria Matters&rdquo;</p></article></div></div></div></section>
+<div class="nwf-year" data-year="2026"><div class="nwf-yh"><h3>2026</h3><span>11 finalists</span></div><div class="yt nwf-hl"><button type="button" class="yt-play" data-id="HT1NfcXrkBw" aria-label="Play video: Highlights of the 2026 North West Final, Liverpool"><img src="https://i.ytimg.com/vi/HT1NfcXrkBw/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="yt-icon" aria-hidden="true"></span></button><p class="yt-cap">Highlights of the 2026 North West Final, Liverpool · <a href="https://www.youtube.com/watch?v=HT1NfcXrkBw" target="_blank" rel="noopener">Watch on YouTube</a></p></div><div class="nwf-grid"><article class="nwf win"><span class="av" aria-hidden="true">CB</span><h4>Cherene de Bruyn <span class="badge">NW winner</span></h4><p class="ro">PhD researcher · Liverpool John Moores University</p><p class="tk">&ldquo;Eye in the Sky: Drones on the trail of the missing&rdquo;</p><p class="nt">Represented the North West at the FameLab UK Final 2026</p><div class="yt"><button type="button" class="yt-play" data-id="XMyLy72ZaX8" aria-label="Play video: Her talk at the FameLab UK Final 2026"><img src="https://i.ytimg.com/vi/XMyLy72ZaX8/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="yt-icon" aria-hidden="true"></span></button><p class="yt-cap">Her talk at the FameLab UK Final 2026 · <a href="https://www.youtube.com/watch?v=XMyLy72ZaX8" target="_blank" rel="noopener">Watch on YouTube</a></p></div></article><article class="nwf"><span class="av" aria-hidden="true">AT</span><h4>Arnas Tamasauskas</h4><p class="ro">PhD researcher · University of Liverpool</p><p class="tk">&ldquo;Born This Way: The Fibromyalgia Experience&rdquo;</p><div class="yt"><button type="button" class="yt-play" data-id="Vvi4EE7r7Xg" aria-label="Play video: On pain research, Smooth Brain Society podcast"><img src="https://i.ytimg.com/vi/Vvi4EE7r7Xg/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="yt-icon" aria-hidden="true"></span></button><p class="yt-cap">On pain research, Smooth Brain Society podcast · <a href="https://www.youtube.com/watch?v=Vvi4EE7r7Xg" target="_blank" rel="noopener">Watch on YouTube</a></p></div></article><article class="nwf"><span class="av" aria-hidden="true">KD</span><h4>Kay Dewhurst</h4><p class="ro">Technician · University of Manchester</p><p class="tk">&ldquo;Particle Accelerators All Around You&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">OK</span><h4>Olga Tereszkowska-Kaminska</h4><p class="ro">PhD researcher · University of Liverpool</p><p class="tk">&ldquo;Bang goes the cancer cell&rdquo;</p><div class="yt"><button type="button" class="yt-play" data-id="FuIGOIf8gYk" aria-label="Play video: Three Minute Thesis talk: Catch me if you can!"><img src="https://i.ytimg.com/vi/FuIGOIf8gYk/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="yt-icon" aria-hidden="true"></span></button><p class="yt-cap">Three Minute Thesis talk: Catch me if you can! · <a href="https://www.youtube.com/watch?v=FuIGOIf8gYk" target="_blank" rel="noopener">Watch on YouTube</a></p></div></article><article class="nwf"><span class="av" aria-hidden="true">SC</span><h4>Skye Crawford</h4><p class="ro">PhD researcher · Liverpool John Moores University</p><p class="tk">&ldquo;The Invasive Species You&#x27;re Carrying&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">DK</span><h4>Deepanshi Karwall</h4><p class="ro">PhD researcher · University of Manchester</p><p class="tk">&ldquo;99.99%&rdquo;</p><div class="yt"><button type="button" class="yt-play" data-id="Sp_2pmEa4S0" aria-label="Play video: Talk Your Thesis, India Science Festival 2024 (third place)"><img src="https://i.ytimg.com/vi/Sp_2pmEa4S0/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="yt-icon" aria-hidden="true"></span></button><p class="yt-cap">Talk Your Thesis, India Science Festival 2024 (third place) · <a href="https://www.youtube.com/watch?v=Sp_2pmEa4S0" target="_blank" rel="noopener">Watch on YouTube</a></p></div></article><article class="nwf"><span class="av" aria-hidden="true">DI</span><h4>Dimitri Iarovoi</h4><p class="ro">PhD researcher · Wrexham University</p><p class="tk">&ldquo;How Welsh castles help us build a fair ChatGPT&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">OE</span><h4>Owen Eaton</h4><p class="ro">Bangor University</p><p class="tk">&ldquo;Of Butterflies and Bison&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">LC</span><h4>Lois Clark</h4><p class="ro">Undergraduate · University of Salford</p><p class="tk">&ldquo;The power of a sponge&rdquo;</p><p class="nt">Also a 2025 finalist</p></article><article class="nwf"><span class="av" aria-hidden="true">LB</span><h4>Lucia Galvez-Bravo</h4><p class="ro">Senior Lecturer · Liverpool John Moores University</p><p class="tk">&ldquo;Bob the beaver&rdquo;</p></article><article class="nwf"><span class="av" aria-hidden="true">GM</span><h4>Gavin McStay</h4><p class="ro">Senior Lecturer · Liverpool John Moores University</p><p class="tk">&ldquo;Mitochondria Matters&rdquo;</p></article></div></div></div></section>
 <section aria-labelledby="oth-h"><div class="wrap"><div class="sec-head"><p class="eyebrow">Regional finals</p>
 <h2 id="oth-h">Also on stage in 2026</h2><p class="lede">Other speakers named publicly by the regional hubs.</p></div>
 <div class="tablewrap"><table class="people"><thead><tr><th>Name</th><th>Institution</th><th>Region</th><th>Placing</th></tr></thead><tbody><tr><td>Fabia Hannan Mone</td><td>University of Westminster</td><td>London</td><td>Regional winner</td></tr><tr><td>Sam Horrell</td><td>Imperial College London</td><td>London</td><td>1st runner-up (also podium in 2025)</td></tr><tr><td>Conor Noonan</td><td>Royal Veterinary College</td><td>London</td><td>2nd runner-up</td></tr><tr><td>Rohit Das</td><td>University of Oxford</td><td>London</td><td>Audience prize</td></tr><tr><td>Success Ajayi</td><td>University of Westminster</td><td>London</td><td>Regional finalist</td></tr><tr><td>Nada Ahmed</td><td>University College London</td><td>London</td><td>Regional finalist</td></tr><tr><td>Ramaa Sri Lalitha Sahitya Puvvada</td><td>University College London</td><td>London</td><td>Regional finalist</td></tr><tr><td>Beatriz Silveira De Arruda</td><td>University College London</td><td>London</td><td>Regional finalist</td></tr><tr><td>Qing Zhang</td><td>University College London</td><td>London</td><td>Regional finalist</td></tr><tr><td>Marifatul Amalia</td><td>University of Edinburgh</td><td>London</td><td>Regional finalist</td></tr><tr><td>Raman Van Wee</td><td>University of Oxford</td><td>London</td><td>Regional finalist</td></tr><tr><td>Katie McGaughey</td><td></td><td>Northern Ireland</td><td>Regional finalist</td></tr></tbody></table></div></div></section>
@@ -503,6 +525,15 @@ nav.bar a[aria-current="page"]{opacity:1;color:var(--spot)}
   if(img.complete) ok(); else img.addEventListener('load',ok);
   img.addEventListener('error',()=>img.remove());
 })();
+/*YTJS*/
+document.addEventListener('click',function(ev){
+  var b=ev.target.closest('.yt-play'); if(!b) return;
+  var id=b.getAttribute('data-id'); var f=document.createElement('iframe');
+  f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0';
+  f.title=b.getAttribute('aria-label'); f.allow='autoplay; encrypted-media; picture-in-picture'; f.allowFullscreen=true;
+  b.replaceWith(f);
+});
+/*/YTJS*/
 </script>
 </body>
 </html>
