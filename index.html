@@ -46,18 +46,47 @@ section{padding-block:clamp(56px,8vw,96px)}
 section+section{border-top:1px solid var(--line)}
 .sec-head{display:grid;gap:12px;margin-bottom:36px}
 
-/* header */
+/* masthead + sticky section bar */
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--stage)}
-header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--stage);color:var(--stage-ink)}
-header.top .wrap{display:flex;align-items:center;gap:20px;padding-block:12px;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
-.brand img{height:34px;width:auto;display:block}
-.brand .word{font-family:var(--f-display);font-weight:800;font-size:1.15rem;letter-spacing:-.01em}
-.brand .word small{font-family:var(--f-mono);font-weight:500;font-size:.7rem;letter-spacing:.14em;color:var(--spot);margin-left:6px}
-nav.links{display:flex;gap:4px 18px;flex-wrap:wrap;margin-left:auto}
-nav.links a{color:var(--stage-ink);text-decoration:none;font-size:.95rem;opacity:.85}
-nav.links a:hover{opacity:1;text-decoration:underline;text-decoration-color:var(--spot)}
+.masthead{background:var(--stage);color:var(--stage-ink);border-bottom:1px solid rgba(238,240,248,.12)}
+.masthead .wrap{display:flex;align-items:center;gap:20px 36px;padding-block:clamp(20px,3vw,32px);flex-wrap:wrap}
+.brand{display:flex;align-items:center;text-decoration:none;color:inherit;min-width:0}
+.brand img{height:clamp(72px,11vw,128px);width:auto;max-width:100%;display:block;mix-blend-mode:screen}
+.brand .word{font-family:var(--f-display);font-weight:800;font-size:clamp(2.8rem,8vw,5rem);letter-spacing:-.02em;line-height:1}
+.hub{display:grid;gap:8px;padding-left:36px;border-left:3px solid var(--spot);min-width:0}
+.hub-name{font-family:var(--f-mono);font-size:.85rem;letter-spacing:.16em;text-transform:uppercase;color:var(--spot)}
+.hub-unis{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 14px;font-family:var(--f-display);font-weight:700;font-size:clamp(1.2rem,2.6vw,1.75rem);line-height:1.2}
+.hub-unis .x{color:var(--spot);font-weight:500}
+nav.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--stage);color:var(--stage-ink);box-shadow:0 1px 0 rgba(238,240,248,.12)}
+nav.bar .wrap{display:flex;gap:4px 22px;flex-wrap:wrap;padding-block:12px}
+nav.bar a{color:var(--stage-ink);text-decoration:none;font-size:.95rem;opacity:.85}
+nav.bar a:hover{opacity:1;text-decoration:underline;text-decoration-color:var(--spot)}
 
+.apply-banner{background:var(--spot);color:#141a33;font-size:.95rem}
+.apply-banner .wrap{display:flex;flex-wrap:wrap;gap:4px 16px;justify-content:space-between;padding-block:10px}
+.apply-banner a{color:#141a33;font-weight:700}
+nav.bar a.nav-apply{color:var(--spot);opacity:1;font-weight:600}
+.deadline{margin-top:22px;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;font-family:var(--f-mono);color:#c3c8dc;font-size:.9rem;letter-spacing:.04em}
+.deadline b{color:var(--spot);font-size:1.15rem}
+.deadline em{font-style:normal;color:var(--stage-ink)}
+.apply{background:var(--surface)}
+.keydates{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:44px}
+.keydates>div{background:var(--stage);color:var(--stage-ink);border-radius:var(--r);padding:22px 24px}
+.kd-l{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:#c3c8dc}
+.kd-d{font-family:var(--f-display);font-weight:800;font-size:clamp(2.2rem,5vw,3.2rem);line-height:1.05;color:var(--spot);margin-top:6px}
+.kd-y{font-family:var(--f-mono);font-size:.85rem;color:#c3c8dc}
+.apply-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.apply-grid>div{min-width:0}
+.col-h{margin-bottom:16px}
+.steps{list-style:none;margin:0;padding:0;counter-reset:st;display:grid;gap:18px}
+.steps li{counter-increment:st;display:grid;grid-template-columns:36px 1fr;column-gap:14px}
+.steps li::before{content:counter(st);grid-row:span 2;width:32px;height:32px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font:700 .9rem/32px var(--f-mono);text-align:center}
+.steps b{font-weight:600}
+.steps span{color:var(--muted)}
+.btn.outline{border-color:var(--line);color:var(--ink);background:transparent}
+.tag.ok{border-color:var(--accent);color:var(--accent)}
+.date.hl strong{color:var(--accent)}
+.apply .date{grid-template-columns:120px 1fr auto}
 /* hero */
 .hero{background:var(--stage);color:var(--stage-ink);padding-block:clamp(48px,7vw,88px);border:0;position:relative;overflow:hidden}
 .hero::after{content:"";position:absolute;inset:-30% -10% auto auto;width:70vmin;height:70vmin;border-radius:50%;
@@ -180,13 +209,19 @@ footer address{font-style:normal}
 .small{font-size:.8rem;opacity:.8;margin-top:16px}
 
 @media (max-width:900px){
+  .apply-grid{grid-template-columns:1fr}
+
   .hero .wrap,.train-grid,.join{grid-template-columns:1fr}
   .journey{grid-template-columns:repeat(3,1fr);row-gap:32px}
   .alumni,.three{grid-template-columns:1fr 1fr}
   footer .wrap{grid-template-columns:1fr 1fr}
 }
 @media (max-width:620px){
-  nav.links{margin-left:0;gap:4px 14px}
+  .keydates{grid-template-columns:1fr}
+  .apply .date{grid-template-columns:1fr}
+
+  nav.bar .wrap{gap:4px 14px}
+  .hub{padding-left:0;border-left:0;padding-top:14px;border-top:3px solid var(--spot)}
   .journey{grid-template-columns:1fr 1fr}
   .alumni,.three,.opps,.res,.finals,.fr{grid-template-columns:1fr}
   .date{grid-template-columns:1fr;gap:4px}
@@ -196,32 +231,43 @@ footer address{font-style:normal}
 </head>
 <body>
 
-<header class="top">
+<div class="apply-banner" role="note">
+  <div class="wrap"><span><b>FameLab 2027 is open to North West researchers.</b> Video entries 29 January – 19 February.</span><a href="#apply">How to apply &rarr;</a></div>
+</div>
+<header class="masthead">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="FameLab North West home">
-      <img id="logo" alt="FameLab" src="https://images.squarespace-cdn.com/content/v1/583218b459cc687f522b226b/5aed5bc8-1b85-4148-9248-b87df6edaaae/FameLab+primary+logo+white.ai.jpg?format=500w" hidden>
-      <span class="word" id="wordmark">FameLab<small>NORTH WEST</small></span>
+      <img id="logo" alt="FameLab" src="https://images.squarespace-cdn.com/content/v1/583218b459cc687f522b226b/5aed5bc8-1b85-4148-9248-b87df6edaaae/FameLab+primary+logo+white.ai.jpg?format=1000w" hidden>
+      <span class="word" id="wordmark">FameLab</span>
     </a>
-    <nav class="links" aria-label="Sections">
-      <a href="#how">How it works</a>
-      <a href="#training">Training</a>
-      <a href="#alumni">Alumni</a>
-      <a href="#dates">Dates</a>
-      <a href="#opportunities">Opportunities</a>
-      <a href="#join">Join</a>
-    </nav>
+    <div class="hub">
+      <p class="hub-name">North West Regional Hub</p>
+      <p class="hub-unis"><span>University of Salford</span><span class="x" aria-hidden="true">&times;</span><span>University of Liverpool</span></p>
+    </div>
   </div>
 </header>
+<nav class="bar" aria-label="Sections">
+  <div class="wrap">
+    <a href="#apply" class="nav-apply">Apply for 2027</a>
+    <a href="#how">How it works</a>
+    <a href="#training">Training</a>
+    <a href="#alumni">Alumni</a>
+    <a href="2025.html">Past finalists</a>
+    <a href="#opportunities">Opportunities</a>
+    <a href="#join">Join</a>
+  </div>
+</nav>
 
 <main id="top">
 <section class="hero" aria-labelledby="hero-h">
   <div class="wrap">
     <div>
-      <p class="eyebrow" style="color:#c3c8dc">FameLab North West Hub · Salford &amp; Liverpool</p>
+      <p class="eyebrow" style="color:#c3c8dc">FameLab UK · Three-minute science talks</p>
       <h1 id="hero-h">Three minutes. One prop. <em>Your research</em>, on stage.</h1>
-      <p class="lede">FameLab is the world's largest science communication competition and training programme. The North West hub trains researchers from across the region, puts them in front of a live audience, and sends one winner to the UK Final at Cheltenham Science Festival. This is where our community lives between the finals.</p>
+      <p class="lede">FameLab is the world's largest science communication competition and training programme. Apply through the North West hub and you get free training, a coaching session, a live final in front of a packed room, and a shot at the UK Final at Cheltenham Science Festival.</p>
+      <p class="deadline"><span>Video entries close</span> <b>19 February 2027</b> <em id="countdown"></em></p>
       <div class="cta">
-        <a class="btn primary" href="#join">Join the community</a>
+        <a class="btn primary" href="#apply">Apply for FameLab 2027</a>
         <a class="btn ghost" href="#training">Start training</a>
       </div>
       <div class="facts">
@@ -238,22 +284,68 @@ footer address{font-style:normal}
   </div>
 </section>
 
+<section id="apply" class="apply" aria-labelledby="apply-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">FameLab 2027 · North West</p>
+      <h2 id="apply-h">Apply for FameLab 2027</h2>
+      <p class="lede">Open to researchers in science, social science, technology, engineering, maths and medicine across the North West, from PhD students to lecturers. You don't need any experience of public speaking. That's what the training is for.</p>
+    </div>
+    <div class="keydates">
+      <div><p class="kd-l">Video entries open</p><p class="kd-d">29 Jan</p><p class="kd-y">2027</p></div>
+      <div><p class="kd-l">Video entries close</p><p class="kd-d">19 Feb</p><p class="kd-y">2027</p></div>
+      <div><p class="kd-l">North West Final</p><p class="kd-d">16/17 Mar</p><p class="kd-y">2027 · evening</p></div>
+    </div>
+    <div class="apply-grid">
+      <div>
+        <h3 class="col-h">How to apply</h3>
+        <ol class="steps">
+          <li><b>Register with FameLab UK.</b> <span>Fill in the application form on <a href="https://www.cheltenhamfestivals.org/our-projects/famelab/famelab-uk" target="_blank" rel="noopener">Cheltenham Festivals' FameLab UK page</a> and choose the North West hub.</span></li>
+          <li><b>Join the welcome.</b> <span>Cheltenham Festivals' online "Welcome to the FameLab family" session in late January.</span></li>
+          <li><b>Come to our training.</b> <span>A free lunchtime workshop online, in the week of 1 or 8 February. Bring an idea, not a finished talk.</span></li>
+          <li><b>Film your three minutes.</b> <span>Record your talk in one take, using only props you could carry on stage. A phone camera is fine. Submit it between 29 January and 19 February.</span></li>
+          <li><b>Hear if you're a finalist.</b> <span>We watch every video and select the North West finalists on 22–23 February.</span></li>
+          <li><b>Rehearse, then take the stage.</b> <span>Finalists get an in-person coaching evening on 1 or 2 March, then perform at the North West Final on 16 or 17 March.</span></li>
+        </ol>
+        <div class="cta" style="margin-top:24px">
+          <a class="btn primary" href="https://www.cheltenhamfestivals.org/our-projects/famelab/famelab-uk" target="_blank" rel="noopener">Go to the application form</a>
+          <a class="btn outline" href="#join">Ask us a question</a>
+        </div>
+      </div>
+      <div>
+        <h3 class="col-h">2027 timeline</h3>
+        <div class="dates">
+          <div class="date"><span class="d">Late Jan</span><span><strong>Welcome to the FameLab family</strong><br><span class="w">Online, run by Cheltenham Festivals</span></span><span class="tag confirm">Date TBC</span></div>
+          <div class="date"><span class="d">29 Jan</span><span><strong>Video entries open</strong><br><span class="w">Straight after the welcome event</span></span><span class="tag ok">Confirmed</span></div>
+          <div class="date"><span class="d">w/c 1 or 8 Feb</span><span><strong>Lunchtime training workshop</strong><br><span class="w">Online, free for all applicants</span></span><span class="tag confirm">Date TBC</span></div>
+          <div class="date"><span class="d">19 Feb</span><span><strong>Video entries close</strong><br><span class="w">Last day to submit your three minutes</span></span><span class="tag ok">Confirmed</span></div>
+          <div class="date"><span class="d">22–23 Feb</span><span><strong>Finalists selected</strong><br><span class="w">We'll let everyone know the outcome</span></span><span class="tag ok">Confirmed</span></div>
+          <div class="date"><span class="d">1 or 2 Mar</span><span><strong>Finalists' coaching evening</strong><br><span class="w">In person: a briefing, a run-through and feedback. Venue TBC</span></span><span class="tag confirm">Date TBC</span></div>
+          <div class="date hl"><span class="d">16 or 17 Mar</span><span><strong>North West Final</strong><br><span class="w">Evening, live audience and judges</span></span><span class="tag confirm">Date TBC</span></div>
+          <div class="date"><span class="d">May</span><span><strong>UK Masterclass, Cheltenham</strong><br><span class="w">For the North West winner, fully funded</span></span><span class="tag">National</span></div>
+          <div class="date"><span class="d">June</span><span><strong>FameLab UK Final</strong><br><span class="w">Cheltenham Science Festival</span></span><span class="tag">National</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="how" aria-labelledby="how-h">
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">How it works</p>
-      <h2 id="how-h">From application to the world stage</h2>
+      <h2 id="how-h">Where a North West win can take you</h2>
       <p class="lede">Open to researchers in science, social science, technology, engineering, maths and medicine, from PhD students to lecturers and specialist science teachers. Full-time science communicators aren't eligible.</p>
     </div>
     <ol class="journey">
-      <li class="here"><p class="when">Oct – mid Jan</p><h3>Apply</h3><p>Online form via Cheltenham Festivals. North West applicants come to this hub.</p></li>
-      <li><p class="when">Late Jan – Feb</p><h3>Hub training</h3><p>Free online sessions on building a three-minute talk, run by Salford and Liverpool.</p></li>
-      <li><p class="when">March</p><h3>North West Final</h3><p>Shortlisted speakers perform live to an audience and judges.</p></li>
+      <li class="here"><p class="when">Jan – Feb</p><h3>Apply</h3><p>Register with FameLab UK, then send the North West hub a three-minute video.</p></li>
+      <li><p class="when">Feb – Mar</p><h3>Hub training</h3><p>Free online sessions on building a three-minute talk, run by Salford and Liverpool.</p></li>
+      <li><p class="when">Mid March</p><h3>North West Final</h3><p>Shortlisted speakers perform live to an audience and judges.</p></li>
       <li><p class="when">Early May</p><h3>Masterclass</h3><p>The regional winner gets a fully funded two-day masterclass in Cheltenham.</p></li>
       <li><p class="when">June</p><h3>UK Final</h3><p>Live at Cheltenham Science Festival, against every UK region's winner.</p></li>
       <li><p class="when">Autumn</p><h3>International</h3><p>The UK champion represents the country at the FameLab International Final.</p></li>
     </ol>
-    <p class="note">The rules never change: three minutes, any STEMM topic, and only the props you can carry on stage yourself. Exact dates for each cycle are set by Cheltenham Festivals and posted under <a href="#dates">Dates</a>.</p>
+    <p class="note">The rules never change: three minutes, any STEMM topic, and only the props you can carry on stage yourself. This year’s North West dates are under <a href="#apply">Apply for 2027</a>.</p>
   </div>
 </section>
 
@@ -362,6 +454,7 @@ footer address{font-style:normal}
       </article>
     </div>
 
+    <p class="note" style="margin-top:28px">See every regional winner and UK Final result: <a href="2024.html">2024</a> · <a href="2025.html">2025</a> · <a href="2026.html">2026</a></p>
     <div class="finals" aria-label="North West Finals">
       <div><p class="y">2024</p><p>LEAF, Bold Street, Liverpool. First final of the Salford–Liverpool hub, sold out.</p></div>
       <div><p class="y">2025</p><p>Science and Industry Museum, Manchester.</p></div>
@@ -370,24 +463,6 @@ footer address{font-style:normal}
   </div>
 </section>
 
-<section id="dates" aria-labelledby="dates-h">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Dates</p>
-      <h2 id="dates-h">The 2027 cycle</h2>
-      <p class="lede">Based on the pattern of previous years. We'll confirm each date here as soon as Cheltenham Festivals publishes it.</p>
-    </div>
-    <div class="dates">
-      <div class="date"><span class="d">Oct 2026</span><span><strong>Applications open</strong><br><span class="w">Apply through Cheltenham Festivals' FameLab UK page</span></span><span class="tag confirm">To confirm</span></div>
-      <div class="date"><span class="d">Mid Jan 2027</span><span><strong>Applications close</strong><br><span class="w">Deadline was 16 January in 2026</span></span><span class="tag confirm">To confirm</span></div>
-      <div class="date"><span class="d">Late Jan 2027</span><span><strong>Welcome to the FameLab family</strong><br><span class="w">Online welcome for all applicants</span></span><span class="tag confirm">To confirm</span></div>
-      <div class="date"><span class="d">Feb 2027</span><span><strong>North West hub training</strong><br><span class="w">Free, online, open to every North West applicant</span></span><span class="tag confirm">To confirm</span></div>
-      <div class="date"><span class="d">Mar 2027</span><span><strong>North West Final</strong><br><span class="w">Free tickets, open to everyone</span></span><span class="tag confirm">To confirm</span></div>
-      <div class="date"><span class="d">Early May 2027</span><span><strong>UK Masterclass, Cheltenham</strong><br><span class="w">For regional winners, fully funded</span></span><span class="tag confirm">To confirm</span></div>
-      <div class="date"><span class="d">June 2027</span><span><strong>FameLab UK Final</strong><br><span class="w">Cheltenham Science Festival</span></span><span class="tag confirm">To confirm</span></div>
-    </div>
-  </div>
-</section>
 
 <section id="opportunities" aria-labelledby="opp-h">
   <div class="wrap">
@@ -462,8 +537,19 @@ footer address{font-style:normal}
 /* logo: show the FameLab logo if it loads, otherwise keep the text wordmark */
 (function(){
   const img=document.getElementById('logo'), word=document.getElementById('wordmark');
-  img.addEventListener('load',()=>{ if(img.naturalWidth>0){ img.hidden=false; word.querySelector('small') && (word.firstChild.textContent=''); } });
+  const ok=()=>{ if(img.naturalWidth>0){ img.hidden=false; word.hidden=true; } };
+  if(img.complete) ok(); else img.addEventListener('load',ok);
   img.addEventListener('error',()=>img.remove());
+})();
+
+/* days left to submit videos */
+(function(){
+  const el=document.getElementById('countdown'); if(!el) return;
+  const close=new Date('2027-02-19T23:59:00Z'), open=new Date('2027-01-29T00:00:00Z'), now=new Date();
+  const days=Math.ceil((close-now)/864e5);
+  if(now>close){ el.textContent='Entries closed'; }
+  else if(now<open){ el.textContent='Opens 29 January'; }
+  else { el.textContent=days+(days===1?' day':' days')+' left'; }
 })();
 
 /* rehearsal timer */

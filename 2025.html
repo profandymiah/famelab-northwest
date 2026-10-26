@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FameLab 2025 Showcase</title>
+<meta name="description" content="FameLab UK 2025: the UK Final, every regional winner and the North West's representative.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: a stage. One bold "3:00" spotlight hero, then calm sections on a cool paper ground; amber = spotlight, cobalt = action. */
+:root{
+  --bg:#f5f6f9; --surface:#ffffff; --ink:#151a2b; --muted:#5b6275; --line:#dde1ea;
+  --accent:#2b4fd6; --accent-ink:#ffffff; --spot:#f2b631; --spot-soft:#fdf1d4;
+  --stage:#141a33; --stage-ink:#eef0f8;
+  --f-display:"Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Figtree", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1220; --surface:#171b2e; --ink:#e8eaf3; --muted:#a2a8bd; --line:#2a3048;
+  --accent:#7d97ff; --accent-ink:#0f1220; --spot:#f2b631; --spot-soft:#2b2512;
+  --stage:#0a0d19; --stage-ink:#eef0f8; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1220; --surface:#171b2e; --ink:#e8eaf3; --muted:#a2a8bd; --line:#2a3048;
+  --accent:#7d97ff; --accent-ink:#0f1220; --spot:#f2b631; --spot-soft:#2b2512;
+  --stage:#0a0d19; --stage-ink:#eef0f8; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--spot);outline-offset:2px}
+h1,h2,h3{font-family:var(--f-display);line-height:1.1;text-wrap:balance;margin:0}
+h2{font-size:clamp(1.9rem,4vw,2.7rem);font-weight:800;letter-spacing:-.01em}
+h3{font-size:1.25rem;font-weight:700}
+p{margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.lede{color:var(--muted);max-width:62ch;font-size:1.08rem}
+section{padding-block:clamp(56px,8vw,96px)}
+section+section{border-top:1px solid var(--line)}
+.sec-head{display:grid;gap:12px;margin-bottom:36px}
+
+/* masthead + sticky section bar */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--stage)}
+.masthead{background:var(--stage);color:var(--stage-ink);border-bottom:1px solid rgba(238,240,248,.12)}
+.masthead .wrap{display:flex;align-items:center;gap:20px 36px;padding-block:clamp(20px,3vw,32px);flex-wrap:wrap}
+.brand{display:flex;align-items:center;text-decoration:none;color:inherit;min-width:0}
+.brand img{height:clamp(72px,11vw,128px);width:auto;max-width:100%;display:block;mix-blend-mode:screen}
+.brand .word{font-family:var(--f-display);font-weight:800;font-size:clamp(2.8rem,8vw,5rem);letter-spacing:-.02em;line-height:1}
+.hub{display:grid;gap:8px;padding-left:36px;border-left:3px solid var(--spot);min-width:0}
+.hub-name{font-family:var(--f-mono);font-size:.85rem;letter-spacing:.16em;text-transform:uppercase;color:var(--spot)}
+.hub-unis{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 14px;font-family:var(--f-display);font-weight:700;font-size:clamp(1.2rem,2.6vw,1.75rem);line-height:1.2}
+.hub-unis .x{color:var(--spot);font-weight:500}
+nav.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--stage);color:var(--stage-ink);box-shadow:0 1px 0 rgba(238,240,248,.12)}
+nav.bar .wrap{display:flex;gap:4px 22px;flex-wrap:wrap;padding-block:12px}
+nav.bar a{color:var(--stage-ink);text-decoration:none;font-size:.95rem;opacity:.85}
+nav.bar a:hover{opacity:1;text-decoration:underline;text-decoration-color:var(--spot)}
+
+.apply-banner{background:var(--spot);color:#141a33;font-size:.95rem}
+.apply-banner .wrap{display:flex;flex-wrap:wrap;gap:4px 16px;justify-content:space-between;padding-block:10px}
+.apply-banner a{color:#141a33;font-weight:700}
+nav.bar a.nav-apply{color:var(--spot);opacity:1;font-weight:600}
+.deadline{margin-top:22px;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;font-family:var(--f-mono);color:#c3c8dc;font-size:.9rem;letter-spacing:.04em}
+.deadline b{color:var(--spot);font-size:1.15rem}
+.deadline em{font-style:normal;color:var(--stage-ink)}
+.apply{background:var(--surface)}
+.keydates{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:44px}
+.keydates>div{background:var(--stage);color:var(--stage-ink);border-radius:var(--r);padding:22px 24px}
+.kd-l{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:#c3c8dc}
+.kd-d{font-family:var(--f-display);font-weight:800;font-size:clamp(2.2rem,5vw,3.2rem);line-height:1.05;color:var(--spot);margin-top:6px}
+.kd-y{font-family:var(--f-mono);font-size:.85rem;color:#c3c8dc}
+.apply-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.apply-grid>div{min-width:0}
+.col-h{margin-bottom:16px}
+.steps{list-style:none;margin:0;padding:0;counter-reset:st;display:grid;gap:18px}
+.steps li{counter-increment:st;display:grid;grid-template-columns:36px 1fr;column-gap:14px}
+.steps li::before{content:counter(st);grid-row:span 2;width:32px;height:32px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font:700 .9rem/32px var(--f-mono);text-align:center}
+.steps b{font-weight:600}
+.steps span{color:var(--muted)}
+.btn.outline{border-color:var(--line);color:var(--ink);background:transparent}
+.tag.ok{border-color:var(--accent);color:var(--accent)}
+.date.hl strong{color:var(--accent)}
+.apply .date{grid-template-columns:120px 1fr auto}
+/* hero */
+.hero{background:var(--stage);color:var(--stage-ink);padding-block:clamp(48px,7vw,88px);border:0;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:-30% -10% auto auto;width:70vmin;height:70vmin;border-radius:50%;
+  background:radial-gradient(circle, rgba(242,182,49,.30), rgba(242,182,49,0) 65%);pointer-events:none}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;position:relative;z-index:1}
+.hero h1{font-size:clamp(2.4rem,6vw,4.4rem);font-weight:800;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;color:var(--spot)}
+.hero p.lede{color:#c3c8dc;margin-top:20px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 1rem var(--f-body);padding:12px 20px;border-radius:999px;text-decoration:none;border:2px solid transparent;cursor:pointer}
+.btn.primary{background:var(--spot);color:#141a33}
+.btn.ghost{border-color:rgba(238,240,248,.4);color:var(--stage-ink);background:transparent}
+.btn.ghost:hover{border-color:var(--stage-ink)}
+.clock{font-family:var(--f-mono);font-weight:700;font-size:clamp(5rem,16vw,10rem);line-height:.9;color:var(--spot);text-align:center;letter-spacing:-.04em}
+.clock-cap{text-align:center;font-family:var(--f-mono);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:#c3c8dc;margin-top:10px}
+.facts{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:36px;padding-top:24px;border-top:1px solid rgba(238,240,248,.15);font-size:.92rem;color:#c3c8dc}
+.facts b{color:var(--stage-ink);font-weight:600}
+
+/* journey */
+.journey{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,1fr);gap:0;counter-reset:s}
+.journey li{counter-increment:s;padding:20px 16px 0 0;border-top:3px solid var(--line);position:relative;min-width:0}
+.journey li::before{content:counter(s);position:absolute;top:-15px;left:0;width:28px;height:28px;border-radius:50%;background:var(--surface);border:3px solid var(--accent);font:700 .8rem/22px var(--f-mono);text-align:center;color:var(--accent)}
+.journey li.here{border-top-color:var(--spot)}
+.journey li.here::before{border-color:var(--spot);background:var(--spot);color:#141a33}
+.journey .when{font-family:var(--f-mono);font-size:.78rem;color:var(--muted);margin-top:6px}
+.journey h3{font-size:1.05rem;margin-top:6px}
+.journey p{font-size:.92rem;color:var(--muted);margin-top:6px}
+.note{font-size:.88rem;color:var(--muted);margin-top:24px}
+
+/* training */
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.c{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:grid;gap:10px;align-content:start}
+.c .big{font-family:var(--f-display);font-weight:800;font-size:2.4rem;color:var(--accent);line-height:1}
+.c ul{margin:0;padding-left:18px;color:var(--muted);font-size:.95rem;display:grid;gap:6px}
+.train-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:28px;align-items:start}
+.timer{background:var(--stage);color:var(--stage-ink);border-radius:var(--r);padding:28px;display:grid;gap:18px;text-align:center}
+.timer .t{font-family:var(--f-mono);font-weight:700;font-size:clamp(3.6rem,10vw,5.5rem);line-height:1;font-variant-numeric:tabular-nums}
+.timer .t.warn{color:var(--spot)} .timer .t.over{color:#ff7a6b}
+.timer .bar{height:6px;background:rgba(238,240,248,.15);border-radius:3px;overflow:hidden}
+.timer .bar i{display:block;height:100%;width:100%;background:var(--spot);transform-origin:left;transition:transform .25s linear}
+.timer .row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.timer .hint{font-size:.88rem;color:#c3c8dc;min-height:1.4em}
+.timer button{font:600 .95rem var(--f-body);padding:10px 18px;border-radius:999px;border:2px solid rgba(238,240,248,.35);background:transparent;color:var(--stage-ink);cursor:pointer}
+.timer button.go{background:var(--spot);border-color:var(--spot);color:#141a33}
+.build{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.build ol{margin:12px 0 0;padding-left:20px;display:grid;gap:10px}
+.build ol b{font-weight:600}
+.build ol span{color:var(--muted)}
+.res{display:grid;grid-template-columns:repeat(2,1fr);gap:0 32px;margin-top:36px}
+.res a{display:grid;gap:2px;padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink)}
+.res a:hover strong{color:var(--accent)}
+.res a span{font-size:.9rem;color:var(--muted)}
+
+/* alumni */
+.draft{display:inline-block;font-family:var(--f-mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;background:var(--spot-soft);color:var(--ink);padding:4px 10px;border-radius:999px}
+.alumni{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.person{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:grid;gap:12px;align-content:start;min-width:0}
+.avatar{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font:800 1.2rem var(--f-display);background:var(--accent);color:var(--accent-ink)}
+.person .meta{font-family:var(--f-mono);font-size:.78rem;color:var(--muted)}
+.person .talk{font-family:var(--f-display);font-weight:700;font-size:1.05rem}
+.person dl{margin:0;display:grid;gap:8px;font-size:.93rem}
+.person dt{font-weight:600}
+.person dd{margin:0;color:var(--muted)}
+.person.open{background:transparent;border-style:dashed;place-content:center;text-align:center;justify-items:center}
+.person.open .avatar{background:var(--spot);color:#141a33}
+.finals{margin-top:44px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.finals div{padding:18px 18px 0 0}
+.finals .y{font-family:var(--f-display);font-weight:800;font-size:1.6rem}
+.finals p{font-size:.92rem;color:var(--muted)}
+
+/* events */
+.dates{display:grid;gap:0;border-top:1px solid var(--line)}
+.date{display:grid;grid-template-columns:150px 1fr auto;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.date .d{font-family:var(--f-mono);font-weight:700;font-variant-numeric:tabular-nums}
+.date .w{font-size:.92rem;color:var(--muted)}
+.tag{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:999px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.tag.confirm{border-color:var(--spot);color:var(--ink);background:var(--spot-soft)}
+
+/* opportunities */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.filters button{font:600 .9rem var(--f-body);padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.opps{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.opp{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px;display:grid;gap:8px;min-width:0}
+.opp .top{display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap}
+.opp p{font-size:.94rem;color:var(--muted)}
+.opp a{font-weight:600;font-size:.94rem}
+
+/* join */
+.join{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:start}
+form{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:grid;gap:16px}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:grid;gap:6px;font-weight:600;font-size:.92rem}
+label span{font-weight:400;color:var(--muted);font-size:.85rem}
+input,select,textarea{font:inherit;font-size:1rem;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);width:100%}
+textarea{min-height:96px;resize:vertical}
+fieldset{border:0;padding:0;margin:0;display:grid;gap:8px}
+legend{font-weight:600;font-size:.92rem;margin-bottom:6px}
+.checks{display:flex;flex-wrap:wrap;gap:8px 18px}
+.checks label{display:flex;gap:8px;align-items:center;font-weight:400}
+.checks input{width:auto}
+.consent{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:.9rem;color:var(--muted)}
+.consent input{width:auto;margin-top:4px}
+.form-msg{font-size:.95rem;padding:12px 14px;border-radius:8px;background:var(--spot-soft)}
+.form-msg[data-kind="error"]{background:transparent;border:1px solid #d9534f}
+.why{display:grid;gap:18px}
+.why li{color:var(--muted)}
+.why ul{margin:0;padding-left:18px;display:grid;gap:8px}
+blockquote{margin:0;padding:18px 20px;border-left:4px solid var(--spot);background:var(--surface);border-radius:0 var(--r) var(--r) 0;font-family:var(--f-display);font-size:1.15rem;font-weight:500}
+blockquote cite{display:block;font:500 .85rem var(--f-body);color:var(--muted);margin-top:8px;font-style:normal}
+
+.tally-wrap{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px 16px;min-width:0}
+.tally-wrap iframe{display:block;border:0;width:100%}
+.tally-alt{font-size:.9rem;color:var(--muted);padding-block:8px}
+footer{background:var(--stage);color:#c3c8dc;padding-block:40px;font-size:.9rem}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px}
+footer a{color:var(--stage-ink)}
+footer h3{color:var(--stage-ink);font-size:1rem;margin-bottom:8px}
+footer address{font-style:normal}
+.small{font-size:.8rem;opacity:.8;margin-top:16px}
+
+@media (max-width:900px){
+  .apply-grid{grid-template-columns:1fr}
+
+  .hero .wrap,.train-grid,.join{grid-template-columns:1fr}
+  .journey{grid-template-columns:repeat(3,1fr);row-gap:32px}
+  .alumni,.three{grid-template-columns:1fr 1fr}
+  footer .wrap{grid-template-columns:1fr 1fr}
+}
+@media (max-width:620px){
+  .keydates{grid-template-columns:1fr}
+  .apply .date{grid-template-columns:1fr}
+
+  nav.bar .wrap{gap:4px 14px}
+  .hub{padding-left:0;border-left:0;padding-top:14px;border-top:3px solid var(--spot)}
+  .journey{grid-template-columns:1fr 1fr}
+  .alumni,.three,.opps,.res,.finals,.fr{grid-template-columns:1fr}
+  .date{grid-template-columns:1fr;gap:4px}
+  footer .wrap{grid-template-columns:1fr}
+}
+</style>
+
+<style>
+nav.bar .yr-sep{width:1px;background:rgba(238,240,248,.25);align-self:stretch}
+nav.bar a[aria-current="page"]{opacity:1;color:var(--spot)}
+.yhero{background:var(--stage);color:var(--stage-ink);padding-block:clamp(40px,6vw,72px)}
+.yhero .wrap{display:grid;grid-template-columns:auto 1fr;gap:16px 40px;align-items:end}
+.yhero .yr{font-family:var(--f-mono);font-weight:700;font-size:clamp(4.5rem,15vw,9rem);line-height:.85;color:var(--spot);letter-spacing:-.04em}
+.yhero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800}
+.yhero p{color:#c3c8dc;margin-top:12px;max-width:60ch}
+.final{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:start}
+.champ{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--spot);border-radius:var(--r);padding:28px;display:grid;gap:10px}
+.champ .name{font-family:var(--f-display);font-weight:800;font-size:clamp(1.8rem,4vw,2.4rem);line-height:1.05}
+.champ .talk{font-family:var(--f-display);font-weight:500;font-size:1.2rem;color:var(--accent)}
+.facts-list{margin:0;display:grid;gap:0;border-top:1px solid var(--line)}
+.facts-list div{display:grid;grid-template-columns:140px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.facts-list dt{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.facts-list dd{margin:0}
+.nw{margin-top:36px;background:var(--stage);color:var(--stage-ink);border-radius:var(--r);padding:28px;display:grid;grid-template-columns:auto 1fr;gap:20px 28px;align-items:center}
+.nw .avatar{width:72px;height:72px;font-size:1.5rem;background:var(--spot);color:#141a33}
+.nw .lbl{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--spot)}
+.nw h3{font-size:1.6rem;margin-top:4px}
+.nw p{color:#c3c8dc;margin-top:6px}
+.regions{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.reg{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px;display:grid;gap:8px;align-content:start;min-width:0}
+.reg.is-nw{border-color:var(--spot);box-shadow:inset 0 0 0 1px var(--spot)}
+.reg.is-win{border-top:4px solid var(--spot)}
+.reg .region{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.reg h3{font-size:1.15rem}
+.reg .inst{font-size:.9rem;color:var(--muted)}
+.reg .field{font-size:.92rem}
+.reg .t{font-family:var(--f-display);font-weight:600;color:var(--accent)}
+.reg .tag{justify-self:start;width:fit-content}
+.reg .src{font-size:.82rem}
+.reg.tbc{background:transparent;border-style:dashed}
+.reg.tbc h3{color:var(--muted);font-weight:600}
+.reg .note{font-size:.85rem;color:var(--muted)}
+.tag.win{background:var(--spot);border-color:var(--spot);color:#141a33}
+.tag.ru{border-color:var(--accent);color:var(--accent)}
+.people{width:100%;border-collapse:collapse;font-size:.95rem}
+.people th,.people td{text-align:left;padding:10px 12px 10px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.people th{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.tablewrap{overflow-x:auto}
+.missing{margin-top:20px;font-size:.92rem;color:var(--muted)}
+.ynav{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (max-width:900px){.final{grid-template-columns:1fr}.regions{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.regions{grid-template-columns:1fr}.yhero .wrap,.nw{grid-template-columns:1fr}.facts-list div{grid-template-columns:1fr;gap:2px}}
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="FameLab North West home">
+      <img id="logo" alt="FameLab" src="https://images.squarespace-cdn.com/content/v1/583218b459cc687f522b226b/5aed5bc8-1b85-4148-9248-b87df6edaaae/FameLab+primary+logo+white.ai.jpg?format=1000w" hidden>
+      <span class="word" id="wordmark">FameLab</span>
+    </a>
+    <div class="hub">
+      <p class="hub-name">North West Regional Hub</p>
+      <p class="hub-unis"><span>University of Salford</span><span class="x" aria-hidden="true">&times;</span><span>University of Liverpool</span></p>
+    </div>
+  </div>
+</header>
+<nav class="bar" aria-label="Sections">
+  <div class="wrap">
+    <a href="index.html#apply" class="nav-apply">Apply for 2027</a>
+    <a href="index.html#how">How it works</a>
+    <a href="index.html#training">Training</a>
+    <a href="index.html#alumni">Alumni</a>
+    <a href="2025.html">Past finalists</a>
+    <a href="index.html#opportunities">Opportunities</a>
+    <a href="index.html#join">Join</a>
+    <span class="yr-sep" aria-hidden="true"></span>
+    <a href="2024.html" data-y="2024">2024</a><a href="2025.html" data-y="2025" aria-current="page">2025</a><a href="2026.html" data-y="2026">2026</a>
+  </div>
+</nav>
+<main id="top">
+<section class="yhero" aria-labelledby="y-h"><div class="wrap">
+<div class="yr" aria-hidden="true">2025</div>
+<div><p class="eyebrow" style="color:#c3c8dc">FameLab UK showcase</p><h1 id="y-h">The class of 2025</h1>
+<p>Every region's winner who took the stage at the FameLab UK Final in 2025, and how far they went.</p></div></div></section>
+
+<section aria-labelledby="final-h"><div class="wrap">
+<div class="sec-head"><p class="eyebrow">UK Final</p><h2 id="final-h">2025 FameLab UK Champion</h2></div>
+<div class="final">
+<div class="champ"><p class="eyebrow">Winner</p><p class="name">Spatika Jayaram</p>
+
+<p class="talk">Time Travel with Your Brain</p>
+<a href="https://www.cheltenhamfestivals.org/news/famelab-uk-a-final-to-remember" target="_blank" rel="noopener" style="font-size:.9rem">Source</a></div>
+<dl class="facts-list"><div><dt>Date & venue</dt><dd>6 Jun 2025, Cheltenham Science Festival</dd></div><div><dt>Region</dt><dd>East of England</dd></div><div><dt>Runners-up</dt><dd>Holly Davies; Tiffany Baptiste</dd></div><div><dt>Audience winner</dt><dd>Tiffany Baptiste</dd></div><div><dt>Finalists</dt><dd>10</dd></div><div><dt>What's next</dt><dd>International Final at CERN Science Gateway, 25 Nov 2025</dd></div></dl>
+</div>
+<div class="nw"><div class="avatar" aria-hidden="true">EP</div><div>
+<p class="lbl">North West representative · Finalist</p><h3>Erin Pallott</h3>
+<p>Biology (intestinal mucus &amp; parasitic worms) · "Snot Just Slime!"</p><p>Hub: Univ of Liverpool &amp; Univ of Salford</p></div></div>
+</div></section>
+
+<section aria-labelledby="reg-h"><div class="wrap">
+<div class="sec-head"><p class="eyebrow">Regional winners</p><h2 id="reg-h">10 regions, one stage</h2>
+<p class="lede">Each card is a regional champion who represented their hub at the UK Final. The North West is outlined.</p></div>
+<div class="regions"><article class="reg is-win"><p class="region">East of England</p><h3>Spatika Jayaram</h3>
+<p class="field">Neuroscience</p>
+<p class="t">Time Travel with Your Brain</p><span class="tag win res">UK Winner</span>
+
+<a class="src" href="https://www.cheltenhamfestivals.org/news/famelab-uk-a-final-to-remember" target="_blank" rel="noopener">Source</a></article><article class="reg is-win"><p class="region">London</p><h3>Tiffany Baptiste</h3>
+<p class="inst">King&#x27;s College London</p><p class="field">Engineering (cardiac digital twins)</p>
+<p class="t">From Heartbreak to Digital Healing</p><span class="tag win res">UK Winner</span>
+
+<a class="src" href="https://www.cheltenhamfestivals.org/news/famelab-uk-a-final-to-remember" target="_blank" rel="noopener">Source</a></article><article class="reg is-nw"><p class="region">North West</p><h3>Erin Pallott</h3>
+<p class="field">Biology (intestinal mucus &amp; parasitic worms)</p>
+<p class="t">Snot Just Slime!</p><span class="tag res">Finalist</span>
+
+<a class="src" href="https://www.cheltenhamfestivals.org/news/famelab-uk-a-final-to-remember" target="_blank" rel="noopener">Source</a></article><article class="reg"><p class="region">East Midlands</p><h3>Caitlin Lewis</h3>
+<p class="field">Chemistry &amp; Physics</p>
+<p class="t">The 0 to 1 of Quantum Computing</p><span class="tag res">Finalist</span>
+
+<a class="src" href="https://www.cheltenhamfestivals.org/news/famelab-uk-a-final-to-remember" target="_blank" rel="noopener">Source</a></article><article class="reg"><p class="region">Gloucestershire &amp; West Midlands</p><h3>Lindsey Sinclair</h3>
+<p class="field">Medicine, Health &amp; Disease; Neuroscience</p>
+<p class="t">Of Mood and Memory</p><span class="tag res">Finalist</span>
+
+<a class="src" href="https://www.cheltenhamfestivals.org/news/famelab-uk-a-final-to-remember" target="_blank" rel="noopener">Source</a></article><article class="reg"><p class="region">North East</p><h3>Elisha Doi</h3>
+<p class="field">Chronic Pain</p>
+<p class="t">Drowning in Pain, Reaching for Relief</p><span class="tag res">Finalist</span>
+
+<a class="src" href="https://www.cheltenhamfestivals.org/news/famelab-uk-a-final-to-remember" target="_blank" rel="noopener">Source</a></article><article class="reg"><p class="region">Northern Ireland</p><h3>Erin McEvoy</h3>
+<p class="field">Marketing &amp; Public Health</p>
+<p class="t">Not Quite Home: Irish Women, Gambling Addictions and the Long Way Back</p><span class="tag res">Finalist</span>
+
+<a class="src" href="https://www.cheltenhamfestivals.org/news/famelab-uk-a-final-to-remember" target="_blank" rel="noopener">Source</a></article><article class="reg"><p class="region">Scotland</p><h3>Eugénia Delacou</h3>
+<p class="field">Soft Matter Physics</p>
+<p class="t">Early Bird Gets the Worm, Early Worm Gets the Organ</p><span class="tag res">Finalist</span>
+
+<a class="src" href="https://www.cheltenhamfestivals.org/news/famelab-uk-a-final-to-remember" target="_blank" rel="noopener">Source</a></article><article class="reg"><p class="region">South East</p><h3>Julia Shumway</h3>
+<p class="field">Epidemiology &amp; Statistics</p>
+<p class="t">Music is Medicine: How music therapy can heal our minds and bodies</p><span class="tag res">Finalist</span>
+
+<a class="src" href="https://www.cheltenhamfestivals.org/news/famelab-uk-a-final-to-remember" target="_blank" rel="noopener">Source</a></article><article class="reg"><p class="region">South West</p><h3>Holly Davies</h3>
+<p class="field">Physics &amp; Astronomy</p>
+<p class="t">Extraordinary Exoplanet Expeditions</p><span class="tag ru res">Joint runner-up</span>
+
+<a class="src" href="https://www.cheltenhamfestivals.org/news/famelab-uk-a-final-to-remember" target="_blank" rel="noopener">Source</a></article></div>
+</div></section>
+
+<section><div class="wrap ynav">
+<a class="btn" style="border-color:var(--line);color:var(--ink)" href="2024.html">&larr; 2024</a>
+<a class="btn primary" href="index.html#join" style="color:#141a33">Join the community</a>
+<a class="btn" style="border-color:var(--line);color:var(--ink)" href="2026.html">2026 &rarr;</a>
+</div></section>
+</main>
+<footer>
+  <div class="wrap">
+    <div>
+      <h3>FameLab North West Hub</h3>
+      <p>Run by the University of Salford and the University of Liverpool as the North West Regional Hub for FameLab UK.</p>
+      <p class="small">FameLab was created by Cheltenham Festivals in 2005. FameLab and its logo belong to Cheltenham Festivals and are used here by the regional hub.</p>
+    </div>
+    <div>
+      <h3>Find us</h3>
+      <address>The SPACE, University of Salford<br>G50 Peel Building, The Crescent<br>Salford M5 4WT</address>
+    </div>
+    <div>
+      <h3>Links</h3>
+      <p><a href="https://scicomm.space" target="_blank" rel="noopener">scicomm.space</a><br>
+      <a href="https://www.cheltenhamfestivals.org/our-projects/famelab/famelab-uk" target="_blank" rel="noopener">FameLab UK</a><br>
+      <a href="https://www.liverpool.ac.uk/health-and-life-sciences/engage-with-us/public-engagement/" target="_blank" rel="noopener">Liverpool public engagement</a></p>
+    </div>
+  </div>
+</footer>
+<script>
+/* logo: show the FameLab logo if it loads, otherwise keep the text wordmark */
+(function(){
+  const img=document.getElementById('logo'), word=document.getElementById('wordmark');
+  const ok=()=>{ if(img.naturalWidth>0){ img.hidden=false; word.hidden=true; } };
+  if(img.complete) ok(); else img.addEventListener('load',ok);
+  img.addEventListener('error',()=>img.remove());
+})();
+</script>
+</body>
+</html>
