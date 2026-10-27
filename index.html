@@ -73,7 +73,7 @@ nav.bar a.nav-apply{color:var(--spot);opacity:1;font-weight:600}
 .keydates{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:44px}
 .keydates>div{background:var(--stage);color:var(--stage-ink);border-radius:var(--r);padding:22px 24px}
 .kd-l{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:#c3c8dc}
-.kd-d{font-family:var(--f-display);font-weight:800;font-size:clamp(2.2rem,5vw,3.2rem);line-height:1.05;color:var(--spot);margin-top:6px}
+.kd-d{font-family:var(--f-display);font-weight:800;font-size:clamp(1.8rem,3.4vw,2.5rem);line-height:1.05;color:var(--spot);margin-top:6px}
 .kd-y{font-family:var(--f-mono);font-size:.85rem;color:#c3c8dc}
 .apply-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
 .apply-grid>div{min-width:0}
@@ -144,6 +144,15 @@ nav.bar a.nav-li{display:inline-flex;align-items:center;gap:6px;margin-left:auto
 @media (max-width:900px){.nwf-grid{grid-template-columns:1fr 1fr}}
 @media (max-width:620px){.nwf-grid{grid-template-columns:1fr}}
 /*/NWF*/
+.reg-callout{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between;background:var(--spot-soft);border:2px solid var(--spot);border-radius:var(--r);padding:20px 24px;margin:-20px 0 40px}
+.reg-callout>div{flex:1 1 420px;min-width:0;display:grid;gap:6px}
+.rc-t{font-family:var(--f-display);font-weight:800;font-size:1.3rem}
+.rc-b{color:var(--ink)}
+.reg-callout .btn.primary{color:#141a33}
+.keydates .kd-reg{background:var(--spot);color:#141a33}
+.keydates .kd-reg .kd-l,.keydates .kd-reg .kd-y{color:#3a3320}
+.keydates .kd-reg .kd-d{color:#141a33}
+.date .w a{color:var(--accent);font-weight:600}
 /* full-bleed hero */
 .hero{min-height:clamp(560px,50vw,760px);display:flex;align-items:center}
 .hero::after{content:none}
@@ -338,7 +347,7 @@ footer address{font-style:normal}
 <body>
 
 <div class="apply-banner" role="note">
-  <div class="wrap"><span><b>FameLab 2027 is open to North West researchers.</b> Video entries 29 January – 19 February.</span><span class="ab-links"><a href="#apply">How to apply &rarr;</a><a class="ab-li" href="https://www.linkedin.com/groups/13123740/" target="_blank" rel="noopener"><svg class="li-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn group</a></span></div>
+  <div class="wrap"><span><b>FameLab 2027: register 2 November – 14 January,</b> then send us your video 29 January – 19 February.</span><span class="ab-links"><a href="https://www.cheltenhamfestivals.org/our-projects/famelab/famelab-uk" target="_blank" rel="noopener">Register &rarr;</a><a href="#apply">How to apply</a><a class="ab-li" href="https://www.linkedin.com/groups/13123740/" target="_blank" rel="noopener"><svg class="li-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn group</a></span></div>
 </div>
 <header class="masthead">
   <a class="banner" href="#top" aria-label="FameLab North West home">
@@ -371,10 +380,10 @@ footer address{font-style:normal}
     <div class="hero-copy">
       <p class="eyebrow" style="color:#c3c8dc">FameLab UK · Three-minute science talks</p>
       <h1 id="hero-h">Three minutes. One prop. <em>Your research</em>, on stage.</h1>
-      <p class="lede">FameLab is the world's largest science communication competition and training programme. Apply through the North West hub and you get free training, a coaching session, a live final in front of a packed room, and a shot at the UK Final at Cheltenham Science Festival.</p>
-      <p class="deadline"><span>Video entries close</span> <b>19 February 2027</b> <em id="countdown"></em></p>
+      <p class="lede">FameLab is the world's largest science communication competition and training programme. Register with FameLab UK, then apply through the North West hub, and you get free training, a coaching session, a live final in front of a packed room, and a shot at the UK Final at Cheltenham Science Festival.</p>
+      <p class="deadline"><span>Register by</span> <b>14 January 2027</b> <span>· videos by</span> <b>19 February</b> <em id="countdown"></em></p>
       <div class="cta">
-        <a class="btn primary" href="#apply">Apply for FameLab 2027</a>
+        <a class="btn primary" href="#apply">How to apply for FameLab 2027</a>
         <a class="btn linkedin" href="https://www.linkedin.com/groups/13123740/" target="_blank" rel="noopener"><svg class="li-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>Join our LinkedIn group</a>
       </div>
       <div class="facts">
@@ -395,31 +404,40 @@ footer address{font-style:normal}
       <p class="lede">Open to researchers in science, social science, technology, engineering, maths and medicine across the North West, from PhD students to lecturers. You don't need any experience of public speaking. That's what the training is for.</p>
     </div>
     <div class="keydates">
-      <div><p class="kd-l">Video entries open</p><p class="kd-d">29 Jan</p><p class="kd-y">2027</p></div>
-      <div><p class="kd-l">Video entries close</p><p class="kd-d">19 Feb</p><p class="kd-y">2027</p></div>
+      <div class="kd-reg"><p class="kd-l">Step 1 · Register</p><p class="kd-d">2 Nov – 14 Jan</p><p class="kd-y">2026–27 · with FameLab UK</p></div>
+      <div><p class="kd-l">Step 2 · Send your video</p><p class="kd-d">29 Jan – 19 Feb</p><p class="kd-y">2027 · to the North West hub</p></div>
       <div><p class="kd-l">North West Final</p><p class="kd-d">16/17 Mar</p><p class="kd-y">2027 · evening</p></div>
+    </div>
+    <div class="reg-callout">
+      <div>
+        <p class="rc-t">Register first, or we can't accept your video</p>
+        <p class="rc-b">Registration for FameLab UK 2027 is open from <b>2 November 2026</b> to <b>14 January 2027</b> on Cheltenham Festivals' website. Choose the North West hub when you register, and we'll invite you to everything that follows.</p>
+      </div>
+      <a class="btn primary" href="https://www.cheltenhamfestivals.org/our-projects/famelab/famelab-uk" target="_blank" rel="noopener">Register on FameLab UK</a>
     </div>
     <div class="apply-grid">
       <div>
         <h3 class="col-h">How to apply</h3>
         <ol class="steps">
-          <li><b>Register with FameLab UK.</b> <span>Fill in the application form on <a href="https://www.cheltenhamfestivals.org/our-projects/famelab/famelab-uk" target="_blank" rel="noopener">Cheltenham Festivals' FameLab UK page</a> and choose the North West hub.</span></li>
-          <li><b>Join the welcome.</b> <span>Cheltenham Festivals' online "Welcome to the FameLab family" session in late January.</span></li>
+          <li><b>Register with FameLab UK, 2 November – 14 January.</b> <span>Fill in the registration form on <a href="https://www.cheltenhamfestivals.org/our-projects/famelab/famelab-uk" target="_blank" rel="noopener">Cheltenham Festivals' FameLab UK page</a> and choose the North West hub. This comes first: only registered applicants can submit a video.</span></li>
+          <li><b>Attend "Welcome to the FameLab family".</b> <span>Cheltenham Festivals' online welcome for every registered applicant, in late January. Video entries open straight afterwards.</span></li>
           <li><b>Come to our training.</b> <span>A free lunchtime workshop online, in the week of 1 or 8 February. Bring an idea, not a finished talk.</span></li>
-          <li><b>Film your three minutes.</b> <span>Record your talk in one take, using only props you could carry on stage. A phone camera is fine. Submit it between 29 January and 19 February.</span></li>
+          <li><b>Send us your three-minute video, 29 January – 19 February.</b> <span>Record your talk in one take, using only props you could carry on stage. A phone camera is fine. Submit it to the North West hub; we'll send registered applicants the details.</span></li>
           <li><b>Hear if you're a finalist.</b> <span>We watch every video and select the North West finalists on 22–23 February.</span></li>
           <li><b>Rehearse, then take the stage.</b> <span>Finalists get an in-person coaching evening on 1 or 2 March, then perform at the North West Final on 16 or 17 March.</span></li>
         </ol>
         <div class="cta" style="margin-top:24px">
-          <a class="btn primary" href="https://www.cheltenhamfestivals.org/our-projects/famelab/famelab-uk" target="_blank" rel="noopener">Go to the application form</a>
+          <a class="btn primary" href="https://www.cheltenhamfestivals.org/our-projects/famelab/famelab-uk" target="_blank" rel="noopener">Register on FameLab UK</a>
           <a class="btn outline" href="#join">Ask us a question</a>
         </div>
       </div>
       <div>
         <h3 class="col-h">2027 timeline</h3>
         <div class="dates">
-          <div class="date"><span class="d">Late Jan</span><span><strong>Welcome to the FameLab family</strong><br><span class="w">Online, run by Cheltenham Festivals</span></span><span class="tag confirm">Date TBC</span></div>
-          <div class="date"><span class="d">29 Jan</span><span><strong>Video entries open</strong><br><span class="w">Straight after the welcome event</span></span><span class="tag ok">Confirmed</span></div>
+          <div class="date hl"><span class="d">2 Nov</span><span><strong>FameLab UK registration opens</strong><br><span class="w"><a href="https://www.cheltenhamfestivals.org/our-projects/famelab/famelab-uk" target="_blank" rel="noopener">Register on the FameLab UK page</a> and choose the North West hub</span></span><span class="tag ok">Confirmed</span></div>
+          <div class="date hl"><span class="d">14 Jan</span><span><strong>Registration closes</strong><br><span class="w">You must be registered to submit a video</span></span><span class="tag ok">Confirmed</span></div>
+          <div class="date"><span class="d">Late Jan</span><span><strong>Welcome to the FameLab family</strong><br><span class="w">Online, for all registered applicants, run by Cheltenham Festivals</span></span><span class="tag confirm">Date TBC</span></div>
+          <div class="date"><span class="d">29 Jan</span><span><strong>Video entries open</strong><br><span class="w">Straight after the welcome event; send your video to us</span></span><span class="tag ok">Confirmed</span></div>
           <div class="date"><span class="d">w/c 1 or 8 Feb</span><span><strong>Lunchtime training workshop</strong><br><span class="w">Online, free for all applicants</span></span><span class="tag confirm">Date TBC</span></div>
           <div class="date"><span class="d">19 Feb</span><span><strong>Video entries close</strong><br><span class="w">Last day to submit your three minutes</span></span><span class="tag ok">Confirmed</span></div>
           <div class="date"><span class="d">22–23 Feb</span><span><strong>Finalists selected</strong><br><span class="w">We'll let everyone know the outcome</span></span><span class="tag ok">Confirmed</span></div>
@@ -441,7 +459,7 @@ footer address{font-style:normal}
       <p class="lede">Open to researchers in science, social science, technology, engineering, maths and medicine, from PhD students to lecturers and specialist science teachers. Full-time science communicators aren't eligible.</p>
     </div>
     <ol class="journey">
-      <li class="here"><p class="when">Jan – Feb</p><h3>Apply</h3><p>Register with FameLab UK, then send the North West hub a three-minute video.</p></li>
+      <li class="here"><p class="when">Nov – Feb</p><h3>Apply</h3><p>Register with FameLab UK by 14 January, then send the North West hub a three-minute video by 19 February.</p></li>
       <li><p class="when">Feb – Mar</p><h3>Hub training</h3><p>Free online sessions on building a three-minute talk, run by Salford and Liverpool.</p></li>
       <li><p class="when">Mid March</p><h3>North West Final</h3><p>Shortlisted speakers perform live to an audience and judges.</p></li>
       <li><p class="when">Early May</p><h3>Masterclass</h3><p>The regional winner gets a fully funded two-day masterclass in Cheltenham.</p></li>
@@ -706,11 +724,12 @@ footer address{font-style:normal}
 /* days left to submit videos */
 (function(){
   const el=document.getElementById('countdown'); if(!el) return;
-  const close=new Date('2027-02-19T23:59:00Z'), open=new Date('2027-01-29T00:00:00Z'), now=new Date();
-  const days=Math.ceil((close-now)/864e5);
-  if(now>close){ el.textContent='Entries closed'; }
-  else if(now<open){ el.textContent='Opens 29 January'; }
-  else { el.textContent=days+(days===1?' day':' days')+' left'; }
+  const regOpen=new Date('2026-11-02T00:00:00Z'), regClose=new Date('2027-01-14T23:59:00Z'), close=new Date('2027-02-19T23:59:00Z'), now=new Date();
+  const left=d=>{const n=Math.ceil((d-now)/864e5); return n+(n===1?' day':' days');};
+  if(now<regOpen){ el.textContent='Registration opens 2 November'; }
+  else if(now<=regClose){ el.textContent=left(regClose)+' left to register'; }
+  else if(now<=close){ el.textContent=left(close)+' left to send your video'; }
+  else { el.textContent='Entries closed for 2027'; }
 })();
 
 /*YTJS*/
